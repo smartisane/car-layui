@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>出错了</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md4 layui-col-md-offset4" style="text-align: center;margin-top: 100px">
+            <h1 style="font-size: 60px;">500</h1>
+            <h1 style="font-size: 20px;">服务器发生错误</h1>
+            <br/>
+            <br/>
+            <a class="layui-btn layui-btn-primary" th:href="@{/}">返回首页</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

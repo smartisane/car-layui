@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>支付页面</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+    <style type="text/css">
+        #content {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 10px;
+            -webkit-box-shadow: 0px 3px 3px #c8c8c8;
+            -moz-box-shadow: 0px 3px 3px #c8c8c8;
+            box-shadow: 0px 3px 3px #c8c8c8;
+        }
+    </style>
+</head>
+<body style="background-color: whitesmoke">
+<div th:replace="common::head"></div>
+
+<div class="layui-container" style="padding: 20px">
+    <div class="row">
+        <div class="layui-col-md4 layui-col-md-offset4">
+            <div id="content">
+                <h2 th:text="${car.type}+' | '+${car.carId}"></h2>
+                <h2>
+                    <span th:text="'￥'+${order.total+order.deposit}"></span>
+                    <span th:text="'(包含租金'+${order.total}+'元，押金'+${order.deposit}+'元)'" style="font-size: 10px"></span>
+                </h2>
+
+                <img th:src="@{/img/pay.png}" src="" style="width: 300px;height: 300px;">
+            </div>
+            <div style="text-align: center;margin-bottom: 20px">
+                <button type="button" class="layui-btn" th:onclick="'submitPay('+${order.id}+')'">模拟支付成功</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

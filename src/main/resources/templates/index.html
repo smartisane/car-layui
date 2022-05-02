@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+    <!--<div th:replace="common::styleandjs"></div>-->
+    <style>
+        #bg {
+            width: 100%;
+            background: url('/img/bg11.jpeg') no-repeat; /*no-repeat:背景图将不会被重复*/
+            background-size: cover; /*背景图片放大到适合元素容器的尺寸，图片比例不变.背景图像的某些部分可能无法显示在背景定位区域中。*/
+            /*padding-bottom: 56.24%;!*起到的效果是让宽度与高度关联,具体数值=(图片高/图片宽)*!*/
+            /*图片分辨率为1202*676 约为56.24%*/
+            padding-top: 60px;
+            padding-bottom: 260px;
+        }
+
+        .p-desc {
+            /*实现p标签单行显示，超出部分使用省略号代替*/
+            font-size: 10px;
+            color: #505353;
+            width: 270px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            line-height: 20px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<!--隐藏水平滚动条-->
+<body style="padding: 0;margin: 0;overflow-x: hidden;">
+
+<div th:replace="common::head"></div>
+<div class="layui-fluid" id="bg">
+    <p style="text-align: center;font-size: 30px;font-weight: bold;color: whitesmoke;">搜索你感兴趣的</p>
+    <div class="layui-row" style="margin-top: 20px;">
+        <div class="layui-col-md8 layui-col-md-offset2" style="text-align: center">
+            <form class="layui-form" action="/submitSearch" method="get">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" name="address" placeholder="输入地区查询" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="type">
+                                <option value="">按车辆类型查找</option>
+                                <option value="轿车">轿车</option>
+                                <option value="跑车">跑车</option>
+                                <option value="SUV">SUV</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="rent">
+                                <option value="">按日租金范围查找</option>
+                                <option value="0">0-99</option>
+                                <option value="1">100-199</option>
+                                <option value="2">200-299</option>
+                                <option value="3">300-399</option>
+                                <option value="4">400+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <button class="layui-btn layui-btn-warm" style="width: 100px;">
+                            搜索
+                        </button>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+<!--rgb(120,196,200)-->
+<div class="layui-fluid"
+     style="padding-top: 20px;padding-left: 180px;padding-right: 180px;padding-bottom: 40px;background-color: rgb(104,188,200)">
+    <p style="text-align: center;font-size: 30px;font-weight: bold;color: white;margin-bottom: 20px;">看看这些最新发布的吧</p>
+    <div class="layui-row layui-col-space10" style="text-align: center">
+        <div th:each="car:${carList}" class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-body" style="padding: 0">
+                    <!--点击图片跳到详情页-->
+                    <a th:href="@{/detail(id=${car.getId()})}">
+                        <!--获取汽车的图片-->
+                        <img style="width: 279px;height: 190px;" th:src="@{${car.getThumbnailUrl()}}"/>
+                    </a>
+                    <div style="text-align: left;padding: 10px;">
+                        <div>
+                            <span th:text="${car.getType()}" style="font-size: 20px;"></span>
+                            <span style="font-size: 20px;color: #009688;float: right;">[[${car.rent}]]<span
+                                    style="font-size: 10px;color:#505353 ">&nbsp;元/天</span></span>
+                        </div>
+                        <p th:text="${car.getCarDescribe()}" class="p-desc"></p>
+                    </div>
+                </div>
+                <!--<div class="layui-card-header" style="text-align: start;padding-left: 26px;">-->
+                <!--    -->
+                <!--</div>-->
+                <!--<div class="layui-card-header" style="text-align: start;padding-left: 26px;">-->
+                <!--    <span th:text="${car.getCarDescribe()}"></span>-->
+                <!--</div>-->
+                <!--<div class="layui-card-header"></div>-->
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center;margin-top: 20px">
+        <a class="layui-btn layui-btn-warm" th:href="@{/submitSearch}">
+            查看更多
+            <i class="layui-icon layui-icon-right"></i>
+        </a>
+    </div>
+
+</div>
+
+<script th:inline="javascript">
+
+    layui.use('layer', function () {
+        var layer = layui.layer;
+
+    });
+</script>
+</body>
+</html>

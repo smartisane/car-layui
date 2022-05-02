@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>资讯</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+    <style>
+        #bg {
+            width: 100%;
+            background: url('/img/newsbg.jpeg') no-repeat; /*no-repeat:背景图将不会被重复*/
+            background-size: cover; /*背景图片放大到适合元素容器的尺寸，图片比例不变.背景图像的某些部分可能无法显示在背景定位区域中。*/
+            /*padding-bottom: 56.24%;!*起到的效果是让宽度与高度关联,具体数值=(图片高/图片宽)*!*/
+            /*图片分辨率为1202*676 约为56.24%*/
+            padding-bottom: 360px;
+        }
+    </style>
+</head>
+<body>
+<body style="background-color: whitesmoke;overflow-x: hidden">
+<div th:replace="common::head"></div>
+<div id="bg"></div>
+<div class="layui-container" style="padding-top: 20px;padding-left: 50px;padding-right: 50px;padding-bottom: 30px">
+    <div class="layui-row layui-col-space8" style="text-align: center">
+        <div th:if="${newsList.size()==0}" class="layui-card" style="margin-top: 4px">
+            <div>暂无资讯</div>
+        </div>
+        <div th:each="news:${newsList}" class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body" style="padding: 10px;">
+                    <div class="layui-row">
+                        <div class="layui-col-md12" style="text-align: left">
+                            <p th:text="${news.title}"
+                               style="font-size: 16px;font-weight: bold;color: #009688"></p>
+                            <p style="color: grey">最后修改时间 [[${#dates.format(news.createTime, 'yyyy/MM/dd
+                                HH:mm:ss')}]]</p>
+                            <hr class="layui-border-green">
+                            <p th:text="${news.content}"></p>
+                        </div>
+                        <!--<div class="layui-col-md2">-->
+                        <!--    <div class="layui-row" style="text-align: right;margin-bottom: 10px;">-->
+                        <!--        <button th:onclick="'editNews('+${news.id}+')'"-->
+                        <!--                class="layui-btn layui-btn-warm layui-btn-sm">编辑-->
+                        <!--        </button>-->
+                        <!--    </div>-->
+                        <!--    <div class="layui-row" style="text-align: right">-->
+                        <!--        <button th:onclick="'deleteNews('+${news.id}+')'"-->
+                        <!--                class="layui-btn layui-btn-danger layui-btn-sm">删除-->
+                        <!--        </button>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

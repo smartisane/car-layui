@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>反馈管理</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+</head>
+<body style="background-color: whitesmoke;overflow-x: hidden">
+<div th:replace="common::head"></div>
+<!--start-->
+<div style="margin-top: 10px;">
+    <div class="layui-row layui-col-space20">
+        <div class="layui-col-md3" style="padding-left: 50px">
+            <div th:replace="common::leftmenu"></div>
+        </div>
+        <div class="layui-col-md9" style="background-color:whitesmoke;padding-top: 10px;padding-right: 50px">
+            <div class="layui-row layui-col-space8" style="text-align: center">
+                <div th:if="${feedbackList.size()==0}" class="layui-card" style="margin-top: 4px">
+                    <div>暂无资讯</div>
+                </div>
+                <div th:each="feedback:${feedbackList}" class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body" style="padding: 10px;">
+                            <div class="layui-row">
+                                <div class="layui-col-md10" style="text-align: left">
+                                    <p th:text="${feedback.title}"
+                                       style="font-size: 16px;font-weight: bold;color: #009688"></p>
+                                    <p th:if="${session.user.role}=='admin'" style="color: grey">反馈用户：[[${feedback.username}]] (id:[[${feedback.id}]])</p>
+                                    <p th:text="${#dates.format(feedback.createTime, 'yyyy/MM/dd HH:mm:ss')}"
+                                       style="color: grey"></p>
+                                    <hr class="layui-border-green">
+                                    <p>反馈内容：[[${feedback.content}]]</p>
+                                    <p>回复内容：[[${feedback.reply}]]</p>
+                                </div>
+                                <div class="layui-col-md2">
+                                    <div class="layui-row" style="text-align: right;margin-bottom: 10px;">
+                                        <p th:text="${feedback.status}==0?'待处理':'已处理'"></p>
+                                    </div>
+                                    <div th:if="${session.user.role}=='admin' and ${feedback.status}==0" class="layui-row" style="text-align: right">
+                                        <button th:onclick="'reply('+${feedback.id}+')'"
+                                                class="layui-btn layui-btn-danger layui-btn-sm">答复
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-->
+</body>
+</html>

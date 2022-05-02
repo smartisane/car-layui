@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--css-->
+<div th:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+</div>
+
+<!--js-->
+<div th:fragment="js">
+    <script th:src="@{/layui/layui.js}"></script>
+    <script th:src="@{/js/common.js}"></script>
+</div>
+
+<!--style and js-->
+<div th:fragment="styleandjs">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/colors.css}">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/daterangepicker.js}"></script>
+    <script th:src="@{/js/dropzone.js}"></script>
+    <script th:src="@{/js/imagesloaded.js}"></script>
+    <script th:src="@{/js/ion.rangeSlider.min.js}"></script>
+    <script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+    <script th:src="@{/js/lightbox.js}"></script>
+    <!--<script th:src="@{/js/map.js}"></script>-->
+    <!--<script th:src="@{/js/map_infobox.js}"></script>-->
+    <script th:src="@{/js/markerclusterer.js}"></script>
+    <script th:src="@{/js/moment.min.js}"></script>
+    <script th:src="@{/js/morris.min.js}"></script>
+    <script th:src="@{/js/raphael.min.js}"></script>
+    <script th:src="@{/js/select2.min.js}"></script>
+    <script th:src="@{/js/slick.js}"></script>
+    <script th:src="@{/js/slider-bg.js}"></script>
+
+    <script th:src="@{/js/script.js}"></script>
+</div>
+
+<!--头部-->
+<div th:fragment="head">
+    <!--父元素添加display: flex，子元素添加align-self: center，实现垂直居中-->
+    <div class="layui-row layui-bg-black" style="display: flex">
+        <!--首页LOGO-->
+        <div class="layui-col-md2" style="align-self: center;padding-left: 40px;">
+            <a th:href="@{/}" style="color: white;font-size: 28px;font-weight: bold">CarRental</a>
+        </div>
+        <!--导航栏-->
+        <div class="layui-col-md12">
+            <ul class="layui-nav layui-bg-black" lay-filter="i-nav">
+                <li th:unless="${isIndex}" class="layui-nav-item "><a href="/">首页</a></li>
+                <li th:if="${isIndex}" class="layui-nav-item layui-this"><a href="/">首页</a></li>
+                <li th:if="${isSearchPage}" class="layui-nav-item layui-this"><a href="javascript:void(0);">搜索</a></li>
+                <li th:if="${isDetailPage}" class="layui-nav-item layui-this"><a href="javascript:void(0);">详情</a></li>
+                <li th:if="${isNewsPage}" class="layui-nav-item layui-this"><a th:href="@{/newsPage}">资讯</a></li>
+                <li th:unless="${isNewsPage}" class="layui-nav-item"><a th:href="@{/newsPage}">资讯</a></li>
+                <li th:if="${isFeedbackPage}" class="layui-nav-item layui-this"><a th:href="@{/feedbackPage}">反馈</a></li>
+                <li th:unless="${isFeedbackPage}" class="layui-nav-item"><a th:href="@{/feedbackPage}">反馈</a></li>
+                <li class="layui-nav-item"><a href="#">公告</a></li>
+
+                <!--右侧登陆与注册-->
+                <shiro:guest>
+                    <li class="layui-nav-item" style="float: right"><a href="#">注册</a></li>
+                    <li class="layui-nav-item " style="float: right;"><a href="#">登陆</a></li>
+                </shiro:guest>
+
+                <shiro:authenticated>
+
+                    <li class="layui-nav-item" style="float: right">
+
+                        <a href="javascript:;">
+                            <img id="avatarImg" th:src="@{${session.user.avatar}}" class="layui-nav-img">
+                            <span th:text="${session.user.username}"></span>
+                        </a>
+                        <dl th:if="${session.user.role}=='admin'" class="layui-nav-child">
+                            <dd><a th:href="@{/carManage}">车辆管理</a></dd>
+                            <dd><a th:href="@{/carOrderPage}">订单管理</a></dd>
+                            <dd><a th:href="@{/newsMPage}">资讯管理</a></dd>
+                            <dd><a th:href="@{/feedbackMPage}">反馈管理</a></dd>
+                            <dd><a th:href="@{/logout}">退出</a></dd>
+                        </dl>
+                        <dl th:if="${session.user.role}=='customer'" class="layui-nav-child">
+                            <dd><a href="javascript:;" onclick="openUserInfoLayer()">个人信息</a>
+                            </dd>
+                            <dd><a th:href="@{/carOrderPage}">我的订单</a></dd>
+                            <dd><a th:href="@{/carMarkPage}">我的收藏</a></dd>
+                            <dd><a th:href="@{/feedbackMPage}">我的反馈</a></dd>
+                            <dd><a th:href="@{/logout}">退出</a></dd>
+                        </dl>
+                        <!--可能会废弃-->
+                        <dl th:if="${session.user.role}=='owner'" class="layui-nav-child">
+                            <dd><a href="javascript:;">个人信息</a></dd>
+                            <dd><a href="javascript:;">车辆管理</a></dd>
+                            <dd><a href="javascript:;">订单管理</a></dd>
+                            <dd><a th:href="@{/logout}">退出</a></dd>
+                        </dl>
+                    </li>
+
+                    <!--如果是carManage页面。则在导航栏上展示发布和搜索选项-->
+                    <!--<li th:if="${isManagePage}" class="layui-nav-item" style="float: right">-->
+                    <!--    <form class="layui-form" action="">-->
+                    <!--        &lt;!&ndash;搜索&ndash;&gt;-->
+                    <!--        <div class="layui-input-inline">-->
+                    <!--            <input type="text" name="search" placeholder="输入内容搜索" autocomplete="off"-->
+                    <!--                   class="layui-input">-->
+                    <!--        </div>-->
+                    <!--        <div class="layui-input-inline">-->
+                    <!--            <a href="javascript:;" class="layui-btn layui-btn-primary" lay-submit-->
+                    <!--               lay-filter="submitSearch">搜索</a>-->
+                    <!--        </div>-->
+
+                    <!--        &lt;!&ndash;发布&ndash;&gt;-->
+                    <!--        <div class="layui-input-inline">-->
+                    <!--            &lt;!&ndash;这里在car_manage界面进行了事件监听&ndash;&gt;-->
+                    <!--            <a href="javascript:;" class="layui-btn layui-btn-primary">发布</a>-->
+                    <!--        </div>-->
+                    <!--    </form>-->
+                    <!--</li>-->
+                </shiro:authenticated>
+
+
+            </ul>
+        </div>
+    </div>
+    <!--打开弹出层和提交表单的脚本-->
+    <script>
+        //注意：导航 依赖 element 模块，否则无法进行功能性操作
+        layui.use(['element', 'layer', 'jquery', 'form'], function () {
+            var element = layui.element;
+            var layer = layui.layer;
+            var jquery = layui.jquery;
+            var form = layui.form;
+
+            //监听提交 登陆
+            form.on('submit(loginSubmit)', function (data) {
+                // console.log(JSON.stringify(data.field))
+                login(data, layer, jquery);
+                return false;
+            });
+
+            //监听提交 注册
+            form.on('submit(registerSubmit)', function (data) {
+                // console.log(JSON.stringify(data.field))
+                register(data, layer, jquery)
+                return false;
+            });
+
+            //修改用户信息
+            form.on('submit(modUserInfoSubmit)', function (data) {
+                // console.log(JSON.stringify(data.field))
+                register(data, layer, jquery)
+                return false;
+            });
+
+            //导航栏点击事件
+            element.on('nav(i-nav)', function (elem) {
+                if (elem.text() === '登陆') {
+                    openLoginLayer(layer, jquery);
+                } else if (elem.text() === '注册') {
+                    openRegisterLayer(layer, jquery);
+                }else if(elem.text() === '公告'){
+                    //示范一个公告层
+                    layer.open({
+                        type: 1
+                        ,
+                        title: false //不显示标题栏
+                        ,
+                        closeBtn: false
+                        ,
+                        area: '300px;'
+                        ,
+                        shade: 0.8
+                        ,
+                        id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                        ,
+                        btn: ['火速围观', '残忍拒绝']
+                        ,
+                        btnAlign: 'c'
+                        ,
+                        moveType: 1 //拖拽模式，0或者1
+                        ,
+                        content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">欢迎使用汽车租赁系统<br>by <a href="https://space.bilibili.com/391388652?spm_id_from=333.1007.0.0" target="_blank" style="color: red">燚旻阿</a><br><br> 这是基于springboot、thymeleaf和layui制作的 <br><br>欢迎关注我的动态</div>'
+                        ,
+                        success: function (layero) {
+                            var btn = layero.find('.layui-layer-btn');
+                            btn.find('.layui-layer-btn0').attr({
+                                href: 'https://space.bilibili.com/391388652?spm_id_from=333.1007.0.0'
+                                , target: '_blank'
+                            });
+                        }
+                    });
+                }
+            })
+        });
+    </script>
+    <!--弹出层使用的登陆表单-->
+    <form class="layui-form layui-form-pane" style="display: none;padding: 10px;" id="login">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                       autocomplete="on"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-block">
+                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                       autocomplete="on"
+                       class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="loginSubmit">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary" style="width: 80px;">重置</button>
+            </div>
+        </div>
+
+    </form>
+
+    <!--弹出层使用的注册表单-->
+    <form class="layui-form layui-form-pane" style="display: none;padding: 10px;" id="register">
+
+        <!--用户名和密码-->
+        <div class="layui-form-item">
+
+            <div class="layui-inline">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                           autocomplete="on"
+                           class="layui-input">
+                </div>
+
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                           autocomplete="on"
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <!--手机和邮箱-->
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">手机</label>
+                <div class="layui-input-inline">
+                    <input type="tel" name="phone" required lay-verify="required|phone" placeholder="请输入手机号"
+                           autocomplete="on"
+                           class="layui-input">
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="email" name="email" required lay-verify="required|email" placeholder="请输入邮箱"
+                           autocomplete="on"
+                           class="layui-input">
+                </div>
+            </div>
+
+        </div>
+
+        <!--姓名和身份证号-->
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">真实姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" required lay-verify="required" placeholder="请输入真实姓名"
+                           autocomplete="on"
+                           class="layui-input">
+                </div>
+
+                <label class="layui-form-label">身份证号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="idCard" required lay-verify="required|identity" placeholder="请输入身份证号"
+                           autocomplete="on"
+                           class="layui-input">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">角色</label>
+                <div class="layui-input-inline">
+                    <select name="role" lay-verify="required">
+                        <option value="customer">租客</option>
+                        <option value="owner">车主</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <!--提交-->
+        <div class="layui-form-item" style="padding-right: 18px;">
+            <div class="layui-input-block" style="float: right">
+                <button class="layui-btn" lay-submit lay-filter="registerSubmit">立即注册</button>
+                <button type="reset" class="layui-btn layui-btn-primary" style="width: 80px;">重置</button>
+            </div>
+        </div>
+
+    </form>
+
+
+    <!--修改个人信息用到的表单，用户名不可更改-->
+
+    <form class="layui-form layui-form-pane" style="display: none;padding: 10px;" id="userInfo">
+
+        <input type="hidden" name="mod" value="1">
+
+        <!--用户名和密码-->
+        <div class="layui-form-item">
+
+            <div class="layui-inline">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                           autocomplete="on"
+                           class="layui-input"
+                           disabled="disabled"
+                           th:value="${session?.user?.username}">
+                </div>
+
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                           autocomplete="on"
+                           class="layui-input"
+                           th:value="${session?.user?.password}">
+                </div>
+            </div>
+        </div>
+
+        <!--手机和邮箱-->
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">手机</label>
+                <div class="layui-input-inline">
+                    <input type="tel" name="phone" required lay-verify="required|phone" placeholder="请输入手机号"
+                           autocomplete="on"
+                           class="layui-input"
+                           th:value="${session?.user?.phone}">
+                </div>
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="email" name="email" required lay-verify="required|email" placeholder="请输入邮箱"
+                           autocomplete="on"
+                           class="layui-input"
+                           th:value="${session?.user?.email}">
+                </div>
+            </div>
+
+        </div>
+
+        <!--姓名和身份证号-->
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">真实姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" required lay-verify="required" placeholder="请输入真实姓名"
+                           autocomplete="on"
+                           class="layui-input"
+                           th:value="${session?.user?.name}">
+                </div>
+                <label class="layui-form-label">身份证号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="idCard" required lay-verify="required|identity" placeholder="请输入身份证号"
+                           autocomplete="on"
+                           class="layui-input"
+                           th:value="${session?.user?.idCard}">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">角色</label>
+                <div class="layui-input-inline">
+                    <select name="role" lay-verify="required">
+                        <option th:if="${session?.user?.role}=='customer'" selected
+                                value="customer">租客
+                        </option>
+                        <option th:if="${session?.user?.role}=='owner'" selected
+                                value="owner">车主
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <!--提交-->
+        <div class="layui-form-item" style="padding-right: 18px;">
+            <div class="layui-input-block" style="float: right">
+                <button class="layui-btn" lay-submit lay-filter="modUserInfoSubmit">修改</button>
+                <button type="reset" class="layui-btn layui-btn-primary" style="width: 80px;">重置</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<!--侧边-->
+<div th:fragment="left" class="layui-panel" style="padding: 20px">
+    <ul class="layui-nav layui-nav-tree" lay-filter="car-menu">
+        <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+        <li class="layui-nav-item layui-nav-itemed">
+            <a th:if="${session?.user?.role}=='admin'" href="javascript:;">管理选项</a>
+            <a th:if="${session?.user?.role}=='customer'" href="javascript:;">订单与收藏</a>
+            <!--为管理员时显示车辆管理-->
+            <dl th:if="${session?.user?.role}=='admin'" class="layui-nav-child">
+                <dd th:if="${isManagePage}" class="layui-this"><a th:href="@{/carManage}">车辆管理</a></dd>
+                <dd th:unless="${isManagePage}"><a th:href="@{/carManage}">车辆管理</a></dd>
+            </dl>
+            <!--<dl class="layui-nav-child">-->
+            <!--    <dd><a href="javascript:;">发布</a></dd>-->
+            <!--</dl>-->
+            <dl class="layui-nav-child">
+                <!--这里报错是因为model是向car_order页存放数据，这里作为fragment引入-->
+                <!--如果当前是order页，则让订单选项默认选中-->
+                <dd th:if="${isOrderPage}" class="layui-this"><a th:href="@{/carOrderPage}">订单管理</a></dd>
+                <dd th:unless="${isOrderPage}"><a th:href="@{/carOrderPage}">订单管理</a></dd>
+            </dl>
+            <dl class="layui-nav-child">
+                <!--这里报错是因为model是向car_order页存放数据，这里作为fragment引入-->
+                <!--如果当前是order页，则让订单选项默认选中-->
+                <dd th:if="${isMarkPage}" class="layui-this"><a th:href="@{/carMarkPage}">我的收藏</a></dd>
+                <dd th:unless="${isMarkPage}"><a th:href="@{/carMarkPage}">我的收藏</a></dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+
+<!--新的左侧菜单-->
+<div th:fragment="leftmenu" class="layui-panel">
+    <ul class="layui-menu" id="docDemoMenu1">
+        <!--为管理员时显示车辆管理-->
+        <li th:if="${session?.user?.role}=='admin' and ${isManagePage}" class="layui-menu-item-checked" lay-options="{id: 100}" >
+            <div class="layui-menu-body-title"><a th:href="@{/carManage}">车辆管理</a></div>
+        </li>
+        <li th:if="${session?.user?.role}=='admin' and !${isManagePage}" lay-options="{id: 100}" >
+            <div class="layui-menu-body-title"><a th:href="@{/carManage}">车辆管理</a></div>
+        </li>
+
+        <li th:if="${session?.user?.role}=='admin' and ${isNewsMPage}" lay-options="{id: 103}" class="layui-menu-item-checked">
+            <div class="layui-menu-body-title"><a th:href="@{/newsMPage}">资讯管理</a></div>
+        </li>
+        <li th:if="${session?.user?.role}=='admin' and !${isNewsMPage}" lay-options="{id: 103}">
+            <div class="layui-menu-body-title"><a th:href="@{/newsMPage}">资讯管理</a></div>
+        </li>
+
+        <li th:if="${session?.user?.role}=='admin' and ${isFeedbackMPage}" lay-options="{id: 103}" class="layui-menu-item-checked">
+            <div class="layui-menu-body-title"><a th:href="@{/feedbackMPage}">反馈管理</a></div>
+        </li>
+        <li th:if="${session?.user?.role}=='admin' and !${isFeedbackMPage}" lay-options="{id: 103}">
+            <div class="layui-menu-body-title"><a th:href="@{/feedbackMPage}">反馈管理</a></div>
+        </li>
+
+        <li th:if="${session?.user?.role}=='customer' and ${isFeedbackMPage}" lay-options="{id: 103}" class="layui-menu-item-checked">
+            <div class="layui-menu-body-title"><a th:href="@{/feedbackMPage}">我的反馈</a></div>
+        </li>
+        <li th:if="${session?.user?.role}=='customer' and !${isFeedbackMPage}" lay-options="{id: 103}">
+            <div class="layui-menu-body-title"><a th:href="@{/feedbackMPage}">我的反馈</a></div>
+        </li>
+
+
+        <li th:if="${session?.user?.role}=='admin' and ${isOrderPage}" lay-options="{id: 101}" class="layui-menu-item-checked">
+            <div class="layui-menu-body-title"><a th:href="@{/carOrderPage}">订单管理</a></div>
+        </li>
+        <li th:if="${session?.user?.role}=='admin' and !${isOrderPage}" lay-options="{id: 101}">
+            <div class="layui-menu-body-title"><a th:href="@{/carOrderPage}">订单管理</a></div>
+        </li>
+        <li th:if="${session?.user?.role}=='customer' and ${isOrderPage}" lay-options="{id: 101}" class="layui-menu-item-checked">
+            <div class="layui-menu-body-title"><a th:href="@{/carOrderPage}">我的订单</a></div>
+        </li>
+        <li th:if="${session?.user?.role}=='customer' and !${isOrderPage}" lay-options="{id: 101}">
+            <div class="layui-menu-body-title"><a th:href="@{/carOrderPage}">我的订单</a></div>
+        </li>
+
+        <li class="layui-menu-item-divider"></li>
+
+        <li th:if="${isMarkPage}" lay-options="{id: 102}" class="layui-menu-item-checked">
+            <div class="layui-menu-body-title"><a th:href="@{/carMarkPage}">我的收藏</a></div>
+        </li>
+        <li th:if="!${isMarkPage}" lay-options="{id: 102}">
+            <div class="layui-menu-body-title"><a th:href="@{/carMarkPage}">我的收藏</a></div>
+        </li>
+
+
+    </ul>
+</div>
+
+
+
+</body>
+</html>

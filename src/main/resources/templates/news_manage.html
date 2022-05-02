@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>资讯管理</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+</head>
+<body style="background-color: whitesmoke;overflow-x: hidden">
+<div th:replace="common::head"></div>
+
+<!--start-->
+<div style="margin-top: 10px;">
+    <div class="layui-row layui-col-space20">
+        <div class="layui-col-md3" style="padding-left: 50px">
+            <div th:replace="common::leftmenu"></div>
+            <br>
+            <div class="layui-panel" style="padding: 10px;">
+                <form class="layui-form">
+                    <label style="font-size: 10px; color: #009688">标题</label>
+                    <div class="layui-form-item">
+                        <input type="text" name="title" placeholder="输入标题" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                    <label style="font-size: 10px; color: #009688">内容</label>
+                    <div class="layui-form-item">
+                        <textarea name="content" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                    <div class="layui-form-item">
+                        <button lay-submit lay-filter="submitNews" class="layui-btn" style="width: 100%;">
+                            <i class="layui-icon layui-icon-release"></i>
+                            发布资讯
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="layui-col-md9" style="background-color:whitesmoke;padding-top: 10px;padding-right: 50px">
+            <div class="layui-row layui-col-space8" style="text-align: center">
+                <div th:if="${newsList.size()==0}" class="layui-card" style="margin-top: 4px">
+                    <div>暂无资讯</div>
+                </div>
+                <div th:each="news:${newsList}" class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body" style="padding: 10px;">
+                            <div class="layui-row">
+                                <div class="layui-col-md10" style="text-align: left">
+                                    <p th:text="${news.title}"
+                                       style="font-size: 16px;font-weight: bold;color: #009688"></p>
+                                    <p style="color: grey">最后修改时间 [[${#dates.format(news.createTime, 'yyyy/MM/dd
+                                        HH:mm:ss')}]]</p>
+                                    <hr class="layui-border-green">
+                                    <p th:text="${news.content}"></p>
+                                </div>
+                                <div class="layui-col-md2">
+                                    <div class="layui-row" style="text-align: right;margin-bottom: 10px;">
+                                        <button th:onclick="'editNews('+${news.id}+')'"
+                                                class="layui-btn layui-btn-warm layui-btn-sm">编辑
+                                        </button>
+                                    </div>
+                                    <div class="layui-row" style="text-align: right">
+                                        <button th:onclick="'deleteNews('+${news.id}+')'"
+                                                class="layui-btn layui-btn-danger layui-btn-sm">删除
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-->
+<script>
+    var editNews;
+    var deleteNews;
+    layui.use(['form', 'jquery', 'layer'], function () {
+        var form = layui.form;
+        var $ = layui.jquery;
+        var layer = layui.layer;
+
+        //监听提交
+        form.on('submit(submitNews)', function (data) {
+            // layer.msg(JSON.stringify(data.field));
+            //发布资讯
+            $.ajax({
+                type: 'POST',
+                url: '/submitNews',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(data.field),
+                success: function (res) {
+                    if (res.code === 1) {
+                        layer.msg(res.msg);
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function (err) {
+                    layer.msg(err);
+                }
+            });//end ajax
+            return false;
+        });
+
+        // 编辑资讯
+        editNews = function editNews(newsId) {
+            //查询该资讯的信息
+            $.ajax({
+                type: 'POST',
+                url: '/getEditNews',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(newsId),
+                success: function (res) {
+                    if (res.code === 1) {
+                        layer.msg(res.msg);
+                        console.log(res.data)//res.data即News对象
+                        $("#eid").val(res.data.id);
+                        $("#etitle").val(res.data.title);
+                        $("#econtent").val(res.data.content);
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function (err) {
+                    layer.msg(err);
+                }
+            });//end ajax
+            //打开layer
+            layer.open({
+                type: 1,//重要
+                title: '编辑资讯',
+                resize: false,
+                anim: 4,//左边滚入
+                area: ['500px', '380px'],
+                content: $('#editNewsForm')
+            });
+        }
+
+        //submit editNews
+        form.on('submit(updateNews)', function (data) {
+            // layer.msg(JSON.stringify(data.field));
+            //修改资讯
+            $.ajax({
+                type: 'POST',
+                url: '/updateNews',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(data.field),
+                success: function (res) {
+                    if (res.code === 1) {
+                        layer.msg(res.msg);
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function (err) {
+                    layer.msg(err);
+                }
+            });//end ajax
+            return false;
+        });
+
+        // 删除资讯
+        deleteNews = function deleteNews(newsId) {
+            layer.confirm('确认删除?', {icon: 3, title:'提示'}, function(index){
+                //do something
+                $.ajax({
+                    type: 'POST',
+                    url: '/deleteNews',
+                    async: false,
+                    contentType: 'application/json',
+                    data: JSON.stringify(newsId),
+                    success: function (res) {
+                        if (res.code === 1) {
+                            layer.msg(res.msg);
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 1500);
+                        } else {
+                            layer.msg(res.msg);
+                        }
+                    },
+                    error: function (err) {
+                        layer.msg(err);
+                    }
+                });//end ajax
+                layer.close(index);
+            });
+
+        }
+    });
+</script>
+
+<!--编辑资讯，弹出层表单-->
+<form class="layui-form layui-form-pane" style="display: none;padding: 10px;" id="editNewsForm">
+
+    <!--传递id，根据id进行更新操作-->
+    <input type="hidden" id="eid" name="id">
+
+    <label style="font-size: 10px; color: #009688">标题</label>
+    <div class="layui-form-item">
+        <input type="text" id="etitle" name="title" placeholder="输入标题" autocomplete="off"
+               class="layui-input">
+    </div>
+    <label style="font-size: 10px; color: #009688">内容</label>
+    <div class="layui-form-item">
+        <textarea name="content" id="econtent" placeholder="请输入内容" class="layui-textarea"
+                  style="height: 155px;"></textarea>
+    </div>
+    <div class="layui-form-item">
+        <button lay-submit lay-filter="updateNews" class="layui-btn" style="width: 100%;">
+            <i class="layui-icon layui-icon-release"></i>
+            发布资讯
+        </button>
+    </div>
+</form>
+</body>
+</html>

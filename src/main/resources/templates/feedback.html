@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>反馈</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+</head>
+<body>
+<body style="background-color: whitesmoke;overflow-x: hidden">
+<div th:replace="common::head"></div>
+<div class="layui-container" style="padding-top: 20px;padding-left: 60px;padding-right: 60px;">
+    <div class="layui-row">
+        <div class="layui-col-md8" style="padding-right: 10px">
+            <div class="layui-panel" style="padding: 20px;">
+                <h2 style="text-align: center;margin-bottom: 20px;">在这里填写您的反馈</h2>
+                <form class="layui-form">
+                    <label style="font-size: 10px; color: #009688">标题</label>
+                    <div class="layui-form-item">
+                        <input type="text" id="title" name="title" placeholder="输入标题" autocomplete="off"
+                               class="layui-input" required lay-verify="required">
+                    </div>
+                    <label style="font-size: 10px; color: #009688">内容</label>
+                    <div class="layui-form-item">
+                        <textarea name="content" id="content" placeholder="请输入内容" class="layui-textarea"
+                                  style="height: 200px;" required lay-verify="required"></textarea>
+                    </div>
+                    <div class="layui-form-item">
+                        <button lay-submit lay-filter="submitFeedback" class="layui-btn" style="width: 100%;">
+                            <i class="layui-icon layui-icon-release"></i>
+                            提交
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="layui-col-md4" style="padding-left: 10px">
+            <div class="row">
+                <div class="layui-panel" style="padding: 20px;text-align: center">
+                    <i class="layui-icon layui-icon-location" style="font-size: 40px"></i>
+                    <p>地址</p>
+                    <hr>
+                    <p>安徽工业大学</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;text-align: center">
+                <div class="layui-panel" style="padding: 20px;">
+                    <i class="layui-icon layui-icon-email" style="font-size: 40px"></i>
+                    <p>联系我们</p>
+                    <hr>
+                    <p><u>yimin3258@qq.com</u></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    layui.use(['form','layer','jquery'], function () {
+        var form = layui.form;
+        var layer = layui.layer;
+        var $ = layui.jquery;
+
+        form.on('submit(submitFeedback)', function (data) {
+            // layer.msg(JSON.stringify(data.field));
+            $.ajax({
+                type: 'POST',
+                url: '/submitFeedback',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(data.field),
+                success: function (res) {
+                    if (res.code === 1) {
+                        layer.msg(res.msg);
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function (err) {
+                    layer.msg(err);
+                }
+            });//end ajax
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

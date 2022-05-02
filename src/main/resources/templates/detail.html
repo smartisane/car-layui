@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+    <style>
+        .colla-title {
+            /*background-color: #393D49;*/
+            /*color: whitesmoke;*/
+        }
+
+        .colla-content {
+            /*background-color: lightgrey;*/
+            /*color: black;*/
+        }
+    </style>
+</head>
+<body style="background-color:whitesmoke;overflow-x: hidden">
+<div th:replace="common::head"></div>
+<div class="layui-fluid" style="padding: 20px 40px;">
+    <div class="layui-row">
+        <div class="layui-col-md6">
+            <div class="layui-row">
+                <div class="layui-carousel" id="carousel">
+                    <div carousel-item>
+                        <div th:each="slide:${car.getSlideList()}">
+                            <img style="width: 520px;height: 320px;" th:src="@{${slide}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row" style="margin-top: 10px">
+                <p style="color: #009688">收藏</p>
+            </div>
+            <div class="layui-row" style="margin-top: 10px">
+                <button class="layui-btn layui-btn-primary" onclick="mark()">
+                    <i class="layui-icon layui-icon-rate"></i>
+                    <!--这里的文字应该在跳到页面之前查询，是否有登录用户，保存到mode中-->
+                    <!--待完善-->
+                    <span id="mark">收藏</span>
+                </button>
+                <button class="layui-btn layui-btn-primary" onclick="prise()">
+                    <i class="layui-icon layui-icon-praise"></i>
+                    赞
+                </button>
+            </div>
+            <div class="layui-row" style="margin-top: 10px">
+                <p style="color: #009688">选择时间</p>
+            </div>
+            <div class="layui-row" style="margin-top: 10px">
+                <div class="layui-inline">
+                    <div class="layui-inline" id="date-range">
+                        <div class="layui-input-inline">
+                            <input type="text" id="startDate" class="layui-input" placeholder="开始日期">
+                        </div>
+                        <span style="color: whitesmoke">-</span>
+                        <div class="layui-input-inline">
+                            <input type="text" id="endDate" class="layui-input" placeholder="结束日期">
+                        </div>
+
+                    </div>
+                    <div class="layui-inline">
+                        <!--预定按钮-->
+                        <button th:if="${car.status == 1}" class="layui-btn layui-btn-primary" onclick="createOrder()">
+                            <i class="layui-icon layui-icon-ok-circle"></i>
+                            <span>预定</span>
+                        </button>
+
+                        <button th:if="${car.status == 0}" class="layui-btn layui-btn-primary" disabled="disabled">
+                            <i class="layui-icon layui-icon-close"></i>
+                            <span style="color: red">已出租</span>
+                        </button>
+
+                        <button th:if="${car.status == -1}" class="layui-btn layui-btn-primary" disabled="disabled">
+                            <i class="layui-icon layui-icon-close"></i>
+                            <span style="color: red">已下架</span>
+                        </button>
+
+                        <button style="color: red;" onclick="notice()" class="layui-btn layui-btn-primary">
+                           注意
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-collapse" style="border-width: 0">
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title colla-title">基本信息</h2>
+                    <!--内容区域-->
+                    <div class="layui-colla-content layui-show colla-content">
+                        <p th:text="'车牌号：'+${car.getCarId()}"></p>
+                        <p th:text="'车辆类型：'+${car.getType()}"></p>
+                        <p th:text="'租金：￥'+${car.getRent()}" style="color: red"></p>
+                        <p th:text="'押金：￥'+${car.getDeposit()}" style="color: red"></p>
+                    </div>
+                </div>
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title colla-title">联系信息</h2>
+                    <div class="layui-colla-content layui-show colla-content">
+                        <p th:text="'联系人：'+${car.getContactName()}"></p>
+                        <p th:text="'联系号码：'+${car.getContactPhone()}" style="color: green"></p>
+                        <p th:text="'地址：'+${car.getAddress()}"></p>
+                    </div>
+                </div>
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title colla-title">详情描述</h2>
+                    <div class="layui-colla-content layui-show colla-content">
+                        <p th:text="${car.getCarDescribe()}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script th:inline="javascript">
+
+
+    var jquery;
+    var layer;
+    layui.use(['carousel', 'jquery', 'layer', 'laydate'], function () {
+        var carousel = layui.carousel;
+        //收藏按钮用到
+        jquery = layui.jquery;
+        layer = layui.layer;
+
+
+
+        var laydate = layui.laydate;
+
+        laydate.render({
+            elem: '#date-range',//开始时间和结束时间所在 input 框的父选择器
+            //设置开始日期、日期日期的 input 选择器
+            range: ['#startDate', '#endDate'], //数组格式为 layui 2.6.6 开始新增
+            change: function (value, date, endDate) {
+                console.log(value); //得到日期生成的值，如：2017-08-18
+                console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+                console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+            },
+            done: function (value, date, endDate) {
+                console.log(value); //得到日期生成的值，如：2017-08-18
+                console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+                console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+            }
+        });
+
+
+        //轮播图
+        carousel.render({
+            elem: '#carousel',
+            width: '520px', //设置容器宽度
+            height: '320px',
+            arrow: 'always', //始终显示箭头
+        });
+
+    });
+
+    //设置收藏按钮文字
+    var isMarked = [[${isMarked}]]
+    //test
+    console.log(isMarked)
+    if(isMarked){
+        document.getElementById("mark").innerText = '已收藏'
+    }
+
+
+    function mark() {
+        //直接在onclick中写mark(${car.id})会出错，不知道什么原因
+        //只好在js中获取id
+        var id = [[${car.id}]]
+        submitMark(id, jquery, layer)
+    }
+
+    function prise() {
+        layer.msg("超赞")
+    }
+
+    function notice() {
+        layer.open({
+            title: '注意'
+            ,content: '只需选择结束日期即可'
+        });
+    }
+
+    function createOrder() {
+        var id = [[${car.id}]]
+        var enddate = jquery("#endDate").val()
+        console.log(id)
+        console.log(enddate)
+        if (enddate === '') {
+            layer.msg("请先选择日期");
+        } else {
+            submitOrder(id, enddate, jquery, layer)
+        }
+
+    }
+
+</script>
+</body>
+</html>

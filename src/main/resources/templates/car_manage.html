@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>车辆管理</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+</head>
+<body style="background-color: whitesmoke;overflow-x: hidden">
+
+
+<div th:replace="common::head"></div>
+
+<div style="margin-top: 10px;">
+    <div class="layui-row layui-col-space20">
+        <div class="layui-col-md3" style="padding-left: 50px">
+            <div th:replace="common::leftmenu"></div>
+            <br>
+            <div class="layui-panel" style="padding: 10px;">
+                <form class="layui-form" action="/submitSearch2">
+                    <label style="font-size: 10px; color: #009688">地区</label>
+                    <div class="layui-form-item">
+                        <input type="text" name="address" placeholder="输入地区查询" autocomplete="off"
+                               class="layui-input" th:value="${address}">
+                    </div>
+                    <label style="font-size: 10px; color: #009688">类型</label>
+                    <div class="layui-form-item">
+                        <select name="type">
+                            <option th:selected="${type}==''" value="">按车辆类型查找</option>
+                            <option th:selected="${type}=='轿车'" value="轿车">轿车</option>
+                            <option th:selected="${type}=='跑车'" value="跑车">跑车</option>
+                            <option th:selected="${type}=='SUV'" value="SUV">SUV</option>
+                        </select>
+                    </div>
+                    <label style="font-size: 10px; color: #009688">租金</label>
+                    <div class="layui-form-item">
+                        <select name="rent">
+                            <option th:selected="${rent}==''" value="">按日租金范围查找</option>
+                            <option th:selected="${rent}=='0'" value="0">0-99</option>
+                            <option th:selected="${rent}=='1'" value="1">100-199</option>
+                            <option th:selected="${rent}=='2'" value="2">200-299</option>
+                            <option th:selected="${rent}=='3'" value="3">300-399</option>
+                            <option th:selected="${rent}=='4'" value="4">400+</option>
+                        </select>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <button class="layui-btn" style="width: 100%;">
+                            <i class="layui-icon layui-icon-search"></i>
+                            搜索
+                        </button>
+                    </div>
+                </form>
+                <button id="addCar" class="layui-btn layui-btn-warm" style="width: 100%;" >
+                    <i class="layui-icon layui-icon-release"></i>
+                    发布
+                </button>
+            </div>
+        </div>
+        <div class="layui-col-md9" style="background-color:whitesmoke;padding-top: 10px;padding-left: 30px;padding-right: 50px">
+            <div class="layui-row layui-col-space16" style="text-align: center">
+                <div th:each="car:${carPage.getRecords()}" class="layui-col-md4 layui-col-sm6">
+                    <div class="layui-card">
+                        <div class="layui-card-body" style="padding: 0">
+                            <div style="position: relative">
+                                <!--点击图片跳到详情页-->
+                                <a th:href="@{/detail(id=${car.getId()})}">
+                                    <!--获取汽车的图片-->
+                                    <img style="width: 266px;height: 166px;" th:src="@{${car.getThumbnailUrl()}}"/>
+                                </a>
+                                <span style="padding: 3px;background-color:green;color:white;position: absolute;left: 3px;top: 0px;z-index: 2;"
+                                      th:if="${car.getStatus()==1}">未出租</span>
+                                <span style="padding: 3px;background-color:#049289;color:white;position: absolute;left: 3px;top: 0px;z-index: 2;"
+                                      th:if="${car.getStatus()==0}">已出租</span>
+                                <span style="padding: 3px;background-color:red;color:white;position: absolute;left: 3px;top: 0px;z-index: 2;"
+                                      th:if="${car.getStatus()==-1}">已下架</span>
+
+                            </div>
+                            <!--<img  th:src="@{${car.getThumbnailUrl()}}"/>-->
+
+                        </div>
+                        <div class="layui-card-header">
+
+                            <span th:text="${car.getType()}+' '+${car.getCarId()}"></span>
+                            &nbsp;
+                            &nbsp;
+                            <a th:data-id="${car.getId()}" class="operate" th:href="@{#}">操作</a>
+                        </div>
+                        <!--<div class="layui-card-header"></div>-->
+                    </div>
+                </div>
+            </div>
+            <!--分页工具laypage-->
+            <div class="layui-row">
+                <div id="page"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--<div class="push"></div>-->
+</div>
+
+<script th:inline="javascript">
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use(['element', 'layer', 'jquery', 'form', 'upload', 'laypage', 'dropdown'], function () {
+        var element = layui.element;
+        var layer = layui.layer;
+        var jquery = layui.jquery;
+        var form = layui.form;
+        var upload = layui.upload;
+        var laypage = layui.laypage;
+        var dropdown = layui.dropdown;//下拉菜单
+
+        //car当前的状态car.getStatus()
+        dropdown.render({
+            elem: '.operate', //可绑定在任意元素中，此处以上述按钮为例
+            data: [
+                {
+                    title: '修改',
+                    id: 100,
+                    href: 'javascript:void(0);'
+                },
+                {
+                    title: '下架',
+                    id: 101,
+                    href: 'javascript:void(0);'
+                },
+                {
+                    title: '上架',
+                    id: 102,
+                    href: 'javascript:void(0);'
+                },
+                {
+                    title: '删除',
+                    id: 103,
+                    href: 'javascript:void(0);'
+                },
+            ],
+            // id: 'operate',
+            //菜单被点击的事件
+            click: function (obj, othis) {
+                // console.log(obj);
+                var elem = jquery(this.elem);
+                var listId = elem.data('id');
+                // layer.msg('得到的 id：'+ listId);
+
+                // 修改也使用添加表单，但是要填充数据
+                if (obj.title === '修改') {
+                    console.log('obj', obj)
+                    console.log('othis', othis)
+                    getModifyCar(listId, jquery, layer, form)
+                } else if (obj.title === '下架') {
+                    downCar(jquery, listId, layer);
+                } else if (obj.title === '上架') {
+                    upCar(jquery, listId, layer)
+                } else if (obj.title === '删除') {
+                    //删除前 再次确认
+                    layer.confirm('确认删除？', {icon: 3, title: '删除'}, function (index) {
+                        //do something
+                        deleteCar(jquery, listId, layer)
+                        layer.close(index);
+                    });
+
+                }
+            }
+
+        });
+
+
+        // 测试代码
+        // var a = [[${carPage.getTotal()}]];
+        // console.log(a)
+        //
+        console.log("cuur=", window.location.search)
+        // console.log("cuur=", window.location.search.split('=')[1])
+
+        //分页实现
+        laypage.render({
+            elem: 'page',
+            count: [[${carPage.getTotal()}]], //数据总数，从服务端得到
+            limit: [[${carPage.getSize()}]], //每页展示的记录
+            curr: window.location.search.split('cur=')[1] === undefined ? 1 : window.location.search.split('cur=')[1],
+            jump: function (obj, first) {
+                //obj包含了当前分页的所有参数，比如：
+                // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                // console.log(obj.limit); //得到每页显示的条数
+                //首次不执行
+                if (!first) {
+                    // console.log(window.location.search)
+                    //当前是搜索展示的结果
+                    if(window.location.search.indexOf('rent')!=-1){
+                        window.location.href = "/submitSearch2"+window.location.search.split('&cur=')[0] +"&cur="+ obj.curr;
+                    }else{
+                        window.location.href = "/carManage?cur=" + obj.curr;
+                    }
+
+                }
+            },
+        });
+
+
+        //上传图片
+        // 暂时只能单文件上传，待解决
+        var uploadInst = upload.render({
+            elem: '#uploadImg' //绑定元素
+            , url: '/upload'//上传接口
+            , data: {
+                key: function () {
+                    return timestamp
+                }
+            }
+            // , url: '/upload' //上传接口
+            , field: 'file' //字段名
+            , accept: 'images'
+            , acceptMime: 'image/*' //只显示图片
+            // ,auto:false //关闭自动上传
+            // ,bindAction:'#btn' //手动上传
+            // ,multiple:true //允许多选
+            // ,number:3 //多选的数量
+            , done: function (res) {
+                if (res.code === 1) {
+                    layer.msg(res.msg, {icon: 1, offset: '100px'});
+                } else {
+                    layer.msg(res.msg, {icon: 2, offset: '100px'});
+                }
+            }
+            , error: function () {
+                //请求异常回调
+                layer.msg("回调error，发生错误了", {icon: 2, offset: '100px'});
+            }
+        });
+
+        //监听提交 发布车辆
+        form.on('submit(publishCarSubmit)', function (data) {
+            // console.log(JSON.stringify(data.field))
+            publishCar(data, layer, jquery);
+            return false;
+        });
+
+
+        //导航栏点击事件
+        //这是侧边栏，现已将发布按钮调整到顶部导航栏，暂时废弃下面的代码
+        // element.on('nav(car-menu)', function (elem) {
+        //     if (elem.text() === '发布') {
+        //         openPublishLayer(layer, jquery);
+        //     }
+        // });
+
+        //导航栏点击事件
+        //这是头部导航栏
+        //2022年5月1日22点41分 废弃
+        // element.on('nav(i-nav)', function (elem) {
+        //     if (elem.text() === '发布') {
+        //         console.log('发布')
+        //         openPublishLayer(layer, jquery, form);
+        //     }
+        // });
+
+        //发布按钮，点击后弹出表单layer
+        jquery("#addCar").click(function () {
+            openPublishLayer(layer, jquery, form);
+        })
+
+    });
+
+
+</script>
+
+<!--弹出层使用的发布车辆表单-->
+<form class="layui-form layui-form-pane" style="display: none;padding: 10px;" id="publishCar">
+    <!--发布车辆使用的key，用于获取同一弹出层上传的图片-->
+
+    <input type="hidden" id="key" name="key" class="layui-input">
+
+    <!--更新车辆时使用的id-->
+    <input type="hidden" id="id" name="id" class="layui-input">
+
+    <div class="layui-form-item">
+
+        <div class="layui-inline">
+            <label class="layui-form-label">车牌号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="carId" required lay-verify="required" placeholder="请输入车牌号"
+                       autocomplete="on"
+                       class="layui-input">
+            </div>
+
+            <label class="layui-form-label">车辆类型</label>
+            <div class="layui-input-inline">
+                <select id="type" name="type" lay-verify="required">
+                    <option value="轿车">轿车</option>
+                    <option value="SUV">SUV</option>
+                    <option value="跑车">跑车</option>
+                </select>
+            </div>
+
+            <!--上传图片-->
+            <div class="layui-input-inline">
+                <button type="button" class="layui-btn layui-btn-primary" id="uploadImg">
+                    <i class="layui-icon">&#xe67c;</i>选择图片
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--租价与押金-->
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">租价</label>
+            <div class="layui-input-inline">
+                <input type="number" name="rent" required lay-verify="required" placeholder="请输入租价"
+                       autocomplete="on"
+                       class="layui-input">
+            </div>
+            <label class="layui-form-label">押金</label>
+            <div class="layui-input-inline">
+                <input type="number" name="deposit" required lay-verify="required" placeholder="请输入押金"
+                       autocomplete="on"
+                       class="layui-input">
+            </div>
+
+            <label class="layui-form-label">Test</label>
+            <div class="layui-input-inline">
+                <input type="text" placeholder="test"
+                       autocomplete="on"
+                       class="layui-input" disabled="disabled">
+            </div>
+
+            <!--&lt;!&ndash;上传图片&ndash;&gt;-->
+            <!--<div class="layui-input-inline">-->
+            <!--<button type="button" class="layui-btn layui-btn-primary" id="btn">-->
+            <!--<i class="layui-icon">&#xe67c;</i>上传-->
+            <!--</button>-->
+            <!--</div>-->
+        </div>
+
+    </div>
+
+    <!--地点，联系人，号码-->
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">地点</label>
+            <div class="layui-input-inline">
+                <input type="text" name="address" required lay-verify="required" placeholder="请输入地点"
+                       autocomplete="on"
+                       class="layui-input">
+            </div>
+
+            <label class="layui-form-label">联系人</label>
+            <div class="layui-input-inline">
+                <input type="text" name="contactName" required lay-verify="required" placeholder="请输入联系人"
+                       autocomplete="on"
+                       class="layui-input">
+            </div>
+
+            <label class="layui-form-label">联系号码</label>
+            <div class="layui-input-inline">
+                <input type="tel" name="contactPhone" required lay-verify="required" placeholder="请输入联系号码"
+                       autocomplete="on"
+                       class="layui-input">
+            </div>
+        </div>
+
+    </div>
+
+    <!--描述-->
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">描述</label>
+        <div class="layui-input-block">
+            <textarea name="carDescribe" placeholder="请输入描述" class="layui-textarea"></textarea>
+        </div>
+    </div>
+
+    <!--提交-->
+    <div class="layui-form-item" style="padding-right: 18px;">
+        <div class="layui-input-block" style="float: right">
+            <button class="layui-btn" lay-submit lay-filter="publishCarSubmit">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary" style="width: 80px;">重置</button>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

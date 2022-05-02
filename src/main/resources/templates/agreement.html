@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>合同页</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+    <style type="text/css">
+        #content{
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 10px;
+            -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
+            -moz-box-shadow:0px 3px 3px #c8c8c8 ;
+            box-shadow:0px 3px 3px #c8c8c8 ;
+        }
+    </style>
+</head>
+<body style="background-color:whitesmoke;overflow-x: hidden">
+<div th:replace="common::head"></div>
+<div class="layui-container" style="padding: 20px">
+    <div class="row">
+        <div class="layui-col-md8 layui-col-md-offset2">
+            <div id="content">
+                <h2 style="text-align: center">租车合同</h2>
+                <p>出租方：<strong th:text="${owner.name}"></strong>（以下简称甲方）</p>
+                <p>身份证：<strong th:text="${owner.idCard}"></strong></p>
+                <p>承租方：<strong th:text="${customer.name}"></strong>（以下简称乙方）</p>
+                <p>身份证：<strong th:text="${customer.idCard}"></strong></p>
+                <br/>
+                <p>根据甲、乙双方在自愿、平等、互利的基础上，经协商一致，为明确双方之间的权力义务关系，就甲方将其合法拥有的车辆出租给乙方使用，乙方承担甲方车辆事宜，订立本合同。</p>
+                <br/>
+                <h3>一、车辆及费用</h3>
+                <p>1、出租人将<strong th:text="${car.type}"></strong>租给承租人使用，车号是<strong th:text="${car.carId}"></strong>。</p>
+                <p>2、租期为<strong th:text="${order.days}"></strong>天，自<strong th:text="${#dates.format(order.startDate, 'yyyy-MM-dd')}"></strong>到<strong th:text="${#dates.format(order.endDate, 'yyyy-MM-dd')}"></strong>。</p>
+                <p>3、租金：每日<strong th:text="${car.rent}"></strong>元，从合同生效日起计。时长<strong th:text="${order.days}"></strong>天，押金<strong th:text="${car.deposit}"></strong>元，共计<strong th:text="${order.total+order.deposit}"></strong>元。</p>
+                <p>4、提车地点：<strong th:text="${car.address}"></strong></p>
+                <p>4、所用燃料由承租人负责。</p>
+                <br/>
+                <h3>二、双方的权利和义务</h3>
+                <p>1、乙方不承担租赁车辆在租赁期间内所发生交通事故或其他事故造成的一切后果，包括有关部门的罚款等。</p>
+                <p>2、乙方不承担租赁车辆于租赁期间引发的第三者责任。</p>
+                <p>3、依照法律、法规的规定乙方应有的权利。</p>
+                <p>4、甲方应提供证件齐全有效的车辆。</p>
+                <p>5、在收到甲方租金及足额押金之后，乙方将所租车辆交付甲方。</p>
+                <p>6、甲方租赁期间拥有所租车辆的使用权。</p>
+                <p>7、甲方租赁期间应严格遵守国家各项法律法规，并承担由于违章、肇事、违法等行为所产生的全部责任及经济损失。</p>
+                <p>8、甲方不得把所租车辆转借给任何第三者使用，不得用租赁车辆进行盈利性经营，以及参加竞赛、测试、实验、教练等活动。</p>
+                <p>9、甲方承担车辆租赁期间的油料费用。在租赁期间应对制动液、冷却液负有每日检查的责任，在车辆正常使用中出现故障或异常，甲方应立即通知乙方或将车辆开至乙方指定维修厂，甲方不得自行折卸、更换愿车设备及零件;因非正常使用造成的事故责任及损失费用均由承租方承担。</p>
+                <p>10、本协议在执行过程中如发现有未尽事宜，由双方平等协商解决。</p>
+                <br/>
+                <h3>三、违约责任</h3>
+                <p>甲乙双方任何一方在协议期内违约，违约方都须承担相应的赔偿责任。</p>
+                <br/>
+                <h3>四、协议期限</h3>
+                <p>本协议自<strong th:text="${#dates.format(order.startDate,'yyyy-MM-dd')}"></strong>起生效，至<strong th:text="${#dates.format(order.endDate,'yyyy-MM-dd')}"></strong>止，协议到期后在双方的同意的情况下，可续签租车协议。</p>
+                <br/>
+                <h3>五、协议文本</h3>
+                <p>本协议一式2份，甲方、乙方各执1份。本协议自双方当事人签章时生效，并具法律责任。</p>
+                <p>承租方：_________出租方：_________</p>
+                <p>____________年_________月_________日</p>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+            <div style="text-align: center;margin-bottom: 20px">
+                <button th:if="${order.status==-2}" type="button" class="layui-btn layui-btn-primary" th:onclick="'javascript: confirmAgreement('+${order.id}+')'">我已阅读并同意上述合同</button>
+                <a th:if="${order.status==-1}" class="layui-btn layui-btn-primary" th:href="@{/order/pay(orderId=${order.id})}">去付款</a>
+                <button th:if="${order.status==0}" type="button" class="layui-btn layui-btn-primary">合同已生效</button>
+                <button disabled="disabled" th:if="${order.status==1}" type="button" class="layui-btn layui-btn-primary">已到期</button>
+                <button th:if="${order.status==2}" type="button" class="layui-btn layui-btn-primary">退租中</button>
+                <button th:if="${order.status==3}" type="button" class="layui-btn layui-btn-primary">拒绝退租</button>
+                <button type="button" class="layui-btn" onclick="printHtml('content')">打印</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function printHtml(elem) {
+        var before = '<html><head><meta http-equiv="content-type" content="text/html;charset=UTF-8"></head><body>'
+        var print = document.getElementById(elem).innerHTML
+        var result = before+print+'</body></html>'
+        console.log(result)
+        var wind = window.open("",'newwindow','height=600,width=600')
+        wind.document.body.innerHTML = result
+        wind.print()
+        return false
+    }
+
+
+</script>
+</body>
+</html>

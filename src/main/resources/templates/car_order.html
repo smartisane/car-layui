@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>订单管理</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+</head>
+<body style="background-color: whitesmoke;overflow-x: hidden">
+<div th:replace="common::head"></div>
+<div style="margin-top: 10px;">
+    <div class="layui-row layui-col-space20">
+        <div class="layui-col-md3" style="padding-left: 50px">
+            <div th:replace="common::leftmenu"></div>
+        </div>
+        <div class="layui-col-md9" style="background-color:whitesmoke;padding-top: 10px">
+            <div class="layui-row" style="text-align: center">
+                <div class="layui-panel" style="padding: 10px">
+                    <table id="orderTable" lay-filter="orderTable"></table>
+                </div>
+
+                <script type="text/html" id="bar">
+                    <div class="layui-btn-container">
+                        <a class="layui-btn layui-btn-xs" lay-event="agreement">查看合同</a>
+                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="cancel">取消订单</a>
+                        <a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="withdraw">申请退租</a>
+                    </div>
+                </script>
+                <script type="text/html" id="bar2">
+                    <a id="options" class="layui-btn layui-btn-xs" lay-event="more">操作 <i
+                            class="layui-icon layui-icon-down"></i></a>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="push"></div>-->
+</div>
+<script th:inline="javascript">
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use(['table', 'util', 'layer', 'dropdown'], function () {
+        var table = layui.table;
+        var layer = layui.layer;
+        var util = layui.util;
+        var dropdown = layui.dropdown;
+
+
+        //第一个实例
+        table.render({
+            elem: '#orderTable'
+            // , height: 450
+            , url: 'http://localhost:8080/carOrderList' //数据接口
+            , page: true //开启分页
+            , limit: 6
+            // , toolbar: true
+            , loading: true
+            , title: '订单表'
+            , cols: [[ //表头
+                {field: 'id', title: '编号', width: 60},
+                {field: 'carId', title: '车辆id', width: 70}
+                , {
+                    field: 'createTime',
+                    title: '创建时间',
+                    width: 90,
+                    templet: function (d) {
+                        return util.toDateString(d.createTime, "HH:mm:ss");
+                    }
+                }
+                , {
+                    field: 'startDate',
+                    title: '开始日期',
+                    width: 110,
+                    templet: function (d) {
+                        return util.toDateString(d.startDate, "yyyy-MM-dd");
+                    }
+                }
+                , {
+                    field: 'endDate',
+                    title: '结束日期',
+                    width: 110,
+                    templet: function (d) {
+                        return util.toDateString(d.endDate, "yyyy-MM-dd");
+                    }
+                }
+                , {field: 'days', title: '租期', width: 60}
+                , {field: 'total', title: '金额', width: 70}
+                , {field: 'customerId', title: '租客', width: 60}
+                , {field: 'ownerId', title: '车主', width: 60}
+                , {
+                    field: 'status',
+                    title: '状态',
+                    width: 90,
+                    templet: function (d) {
+                        //-3已取消，-2待签合同，-1待付款，0生效中，1已到期
+                        switch (d.status) {
+                            case -3:
+                                return '已取消'
+                            case -2:
+                                return '<div style="color:#abab1b">待签合同</div>'
+                            case -1:
+                                return '<div style="color:red">待付款</div>'
+                            case 0:
+                                return '<div style="color:green">生效中</div>'
+                            case 1:
+                                return '已到期'
+                            case 2:
+                                return '<div style="color:#5712c2">退租中</div>'
+                            case 3:
+                                return '拒绝退租'
+                        }
+                    }
+                }
+                , {field: 'option', title: '操作', toolbar: '#bar2'}
+            ]]
+        });
+
+        //监听行工具事件
+        table.on('tool(orderTable)', function (obj) {
+            var data = obj.data;
+            console.log('obj', obj)
+            console.log('data', data)
+            if (obj.event === 'cancel') {
+                layer.confirm('is not?', {icon: 3, title: '提示'}, function (index) {
+                    //do something
+                    cancelOrder(data.id, table)
+                    layer.close(index);
+                });
+            } else if (obj.event === 'agreement') {
+                window.open('/order/agreement/view?orderId=' + data.id, '_blank');
+            } else if (obj.event === 'withdraw') {
+                layer.msg('点击了 申请退租', {icon: 0});
+            } else if (obj.event === 'more') {
+                //更多下拉菜单
+                var role = [[${session?.user?.role}]]
+                console.log(role)
+                if (role === 'admin') {
+                    dropdown.render({
+                        elem: '#options'
+                        , show: true //外部事件触发即显示
+                        , data: [{
+                            title: '查看详情'
+                            , id: 'detail'
+                        }, {
+                            title: '查看合同'
+                            , id: 'agreementview'
+                        }, {
+                            title: '取消订单'
+                            , id: 'cancelorder'
+                        }, {
+                            title: '同意退租申请'
+                            , id: 'agreewithdraw'
+                        }, {
+                            title: '拒绝退租申请'
+                            , id: 'refusewithdraw'
+                        }]
+                        , click: function (data, othis) {
+                            //根据 id 做出不同操作
+                            if (data.id === 'detail') {
+                                window.open('/detail?id=' + obj.data.carId, '_blank');
+                            } else if (data.id === 'agreementview') {
+                                window.open('/order/agreement/view?orderId=' + obj.data.id, '_blank');
+                            } else if (data.id === 'cancelorder') {
+                                layer.confirm('确认取消订单?', {icon: 3, title: '提示'}, function (index) {
+                                    //do something
+                                    cancelOrder(obj.data.id, table)
+                                    layer.close(index);
+                                });
+                            } else if (data.id === 'agreewithdraw') {
+                                endOrderHandle(obj.data.id, 1, table)
+                            } else if (data.id === 'refusewithdraw') {
+                                endOrderHandle(obj.data.id, 0, table)
+                            }
+                        }
+                        , align: 'right' //右对齐弹出（v2.6.8 新增）
+                        , style: 'box-shadow: 1px 1px 10px rgb(0 0 0 / 12%);' //设置额外样式
+                    });
+                } else if (role === 'customer') {
+                    dropdown.render({
+                        elem: '#options'
+                        , show: true //外部事件触发即显示
+                        , data: [{
+                            title: '查看详情'
+                            , id: 'detail'
+                        }, {
+                            title: '查看合同'
+                            , id: 'agreementview'
+                        }, {
+                            title: '取消订单'
+                            , id: 'cancelorder'
+                        }, {
+                            title: '申请退租'
+                            , id: 'withdraw'
+                        }]
+                        , click: function (data, othis) {
+                            //根据 id 做出不同操作
+                            if (data.id === 'detail') {
+                                window.open('/detail?id=' + obj.data.carId, '_blank');
+                            } else if (data.id === 'agreementview') {
+                                window.open('/order/agreement/view?orderId=' + obj.data.id, '_blank');
+                            } else if (data.id === 'cancelorder') {
+                                layer.confirm('确认取消订单?', {icon: 3, title: '提示'}, function (index) {
+                                    //do something
+                                    cancelOrder(obj.data.id, table)
+                                    layer.close(index);
+                                });
+                            } else if (data.id === 'withdraw') {
+                                layer.confirm('确认申请退租?', {icon: 3, title: '提示'}, function (index) {
+                                    //do something
+                                    endOrder(obj.data.id, table)
+                                    layer.close(index);
+                                });
+                            }
+                        }
+                        , align: 'right' //右对齐弹出（v2.6.8 新增）
+                        , style: 'box-shadow: 1px 1px 10px rgb(0 0 0 / 12%);' //设置额外样式
+                    });
+                }
+
+            }
+
+        });
+
+
+    });
+</script>
+</body>
+</html>

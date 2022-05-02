@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>我的收藏</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+    <style>
+        .p-desc {
+            /*实现p标签单行显示，超出部分使用省略号代替*/
+            font-size: 10px;
+            color: #505353;
+            width: 460px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            line-height: 59px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body style="background-color: whitesmoke;overflow-x: hidden">
+<div th:replace="common::head"></div>
+
+<!--start-->
+<div style="margin-top: 10px;">
+    <div class="layui-row layui-col-space20">
+        <div class="layui-col-md3" style="padding-left: 50px">
+            <div th:replace="common::leftmenu"></div>
+        </div>
+        <div class="layui-col-md9" style="background-color:whitesmoke;padding-top: 10px;padding-right: 50px">
+            <div class="layui-row layui-col-space8" style="text-align: center">
+                <div th:if="${markInfoList.size()==0}" class="layui-card" style="margin-top: 4px" >
+                    <div>暂无收藏</div>
+                </div>
+                <div th:each="mark:${markInfoList}" class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body" style="padding: 10px;">
+                            <div class="layui-row">
+                                <div class="layui-col-md3">
+                                    <!--点击图片跳到详情页-->
+                                    <a th:href="@{/detail(id=${mark.carId})}">
+                                        <!--获取汽车的图片-->
+                                        <img style="width: 200px;height: 130px;" th:src="@{${mark.getThumbnailUrl()}}"/>
+                                    </a>
+                                </div>
+                                <div class="layui-col-md9">
+                                    <div style="text-align: left;padding-top: 10px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px">
+                                        <div>
+                                            <span th:text="${mark.getType()}" style="font-size: 20px;"></span>
+                                            <span style="font-size: 20px;color: #009688;float: right;">[[${mark.rent}]]<span
+                                                    style="font-size: 10px;">&nbsp;元/天</span></span>
+                                        </div>
+                                        <p th:text="${mark.getCarDescribe()}" class="p-desc"></p>
+                                        <div>
+                                            <i class="layui-icon layui-icon-location"></i>
+                                            <span th:text="${mark.getAddress()}"></span>
+                                            <button style="float: right" class="layui-btn layui-btn-danger layui-btn-sm"
+                                                    th:onclick="'cancelMark('+${mark.carId}+')'">取消收藏
+                                            </button>
+                                        </div>
+                                        <!--<p ></p>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--<div class="layui-card-header" style="text-align: start;padding-left: 26px;">-->
+                        <!--    -->
+                        <!--</div>-->
+                        <!--<div class="layui-card-header" style="text-align: start;padding-left: 26px;">-->
+                        <!--    <span th:text="${car.getCarDescribe()}"></span>-->
+                        <!--</div>-->
+                        <!--<div class="layui-card-header"></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-->
+<script>
+    function cancelMark(carId) {
+        jquery.ajax({
+            type: 'POST',
+            url: '/cancelMark',
+            async: false,
+            contentType: 'application/json',
+            data: JSON.stringify(carId),
+            success: function (res) {
+                console.log(res)
+                if (res.code === 1) {
+                    layer.msg(res.msg)
+                    setTimeout(function () {
+                        window.location.reload();
+                    },1500)
+                } else {
+                    layer.msg(res.msg)
+                }
+            },
+            error: function (err) {
+                layer.msg(err, {icon: 2, offset: '100px'});
+            }
+        })
+    }
+</script>
+</body>
+</html>

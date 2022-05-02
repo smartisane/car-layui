@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索结果</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+    <style>
+
+        .p-desc {
+            /*实现p标签单行显示，超出部分使用省略号代替*/
+            font-size: 10px;
+            width: 220px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            line-height: 20px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<!--#4a4b57背景色-->
+<body style="background-color: whitesmoke;overflow-x: hidden;overflow-y: hidden;">
+<!--搜索结果-->
+<!--<div th:each="car:${carPage.getRecords()}">-->
+<!--    <p th:text="${car}"></p>-->
+<!--</div>-->
+<div th:replace="common::head"></div>
+<div class="layui-container" style="padding-top: 16px;padding-left: 80px;padding-right: 80px">
+    <div class="layui-row">
+        <!--搜索条件-->
+        <div class="layui-col-md3">
+            <div class="layui-panel" style="padding: 20px;border-width: 0">
+                <form class="layui-form" action="/submitSearch">
+                    <label style="font-size: 10px; color: #009688">地区</label>
+                    <div class="layui-form-item">
+                        <input type="text" name="address" placeholder="输入地区查询" autocomplete="off"
+                               class="layui-input" th:value="${address}">
+                    </div>
+                    <label style="font-size: 10px; color: #009688">类型</label>
+                    <div class="layui-form-item">
+                        <select name="type">
+                            <option th:selected="${type}==''" value="">按车辆类型查找</option>
+                            <option th:selected="${type}=='轿车'" value="轿车">轿车</option>
+                            <option th:selected="${type}=='跑车'" value="跑车">跑车</option>
+                            <option th:selected="${type}=='SUV'" value="SUV">SUV</option>
+                        </select>
+                    </div>
+                    <label style="font-size: 10px; color: #009688">租金</label>
+                    <div class="layui-form-item">
+                        <select name="rent">
+                            <option th:selected="${rent}==''" value="">按日租金范围查找</option>
+                            <option th:selected="${rent}=='0'" value="0">0-99</option>
+                            <option th:selected="${rent}=='1'" value="1">100-199</option>
+                            <option th:selected="${rent}=='2'" value="2">200-299</option>
+                            <option th:selected="${rent}=='3'" value="3">300-399</option>
+                            <option th:selected="${rent}=='4'" value="4">400+</option>
+                        </select>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <button class="layui-btn" style="width: 100%;">
+                            <i class="layui-icon layui-icon-search"></i>
+                            搜索
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--展示搜索结果-->
+        <div class="layui-col-md9" style="padding-left: 40px">
+            <div class="layui-row layui-col-space8" style="text-align: center">
+                <div th:each="car:${carPage.getRecords()}" class="layui-col-md4">
+                    <div class="layui-card">
+                        <div class="layui-card-body" style="padding: 0;">
+                            <!--点击图片跳到详情页-->
+                            <a th:href="@{/detail(id=${car.id})}">
+                                <!--获取汽车的图片-->
+                                <img style="width: 234px;height: 150px;" th:src="@{${car.getThumbnailUrl()}}"/>
+                            </a>
+                            <div style="text-align: left;padding-top: 10px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px">
+                                <div>
+                                    <span th:text="${car.getType()}" style="font-size: 20px;"></span>
+                                    <span style="font-size: 20px;color: #009688;float: right;">[[${car.rent}]]<span
+                                            style="font-size: 10px;">&nbsp;元/天</span></span>
+                                </div>
+                                <p th:text="${car.getCarDescribe()}" class="p-desc"></p>
+                            </div>
+                        </div>
+                        <!--<div class="layui-card-header" style="text-align: start;padding-left: 26px;">-->
+                        <!--    -->
+                        <!--</div>-->
+                        <!--<div class="layui-card-header" style="text-align: start;padding-left: 26px;">-->
+                        <!--    <span th:text="${car.getCarDescribe()}"></span>-->
+                        <!--</div>-->
+                        <!--<div class="layui-card-header"></div>-->
+                    </div>
+                </div>
+            </div>
+
+            <!--分页工具laypage-->
+            <div class="layui-row">
+                <div id="page"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script th:inline="javascript">
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use(['element', 'layer', 'jquery', 'form', 'upload', 'laypage', 'dropdown'], function () {
+        var element = layui.element;
+        var layer = layui.layer;
+        var jquery = layui.jquery;
+        var form = layui.form;
+        var upload = layui.upload;
+        var laypage = layui.laypage;
+        var dropdown = layui.dropdown;//下拉菜单
+
+
+        //分页实现
+        laypage.render({
+            elem: 'page',
+            count: [[${carPage.getTotal()}]], //数据总数，从服务端得到
+            limit: [[${carPage.getSize()}]], //每页展示的记录
+            curr: window.location.search.split('cur=')[1] === undefined ? 1 : window.location.search.split('cur=')[1],
+            jump: function (obj, first) {
+                //obj包含了当前分页的所有参数，比如：
+                // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                // console.log(obj.limit); //得到每页显示的条数
+                //首次不执行
+                if (!first) {
+                    //do something
+                    window.location.href = "/submitSearch?address=" + [[${address}]] + "&type=" + [[${type}]] + "&rent=" + [[${rent}]] + "&cur=" + obj.curr;
+                }
+            },
+        });
+
+    });
+</script>
+</body>
+</html>
