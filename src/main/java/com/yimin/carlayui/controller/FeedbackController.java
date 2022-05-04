@@ -22,6 +22,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 反馈表(Feedback)表控制层
@@ -117,6 +118,31 @@ public class FeedbackController extends ApiController {
         model.addAttribute("isFeedbackMPage",true);
         return "feedback_manage";
 
+    }
+
+
+    @PostMapping("/submitReply")
+    @ResponseBody
+    public Result submitReply(@RequestBody Map<String,String> map,HttpSession session){
+        User user = (User) session.getAttribute("user");
+        if(user==null || !"admin".equals(user.getRole())){
+            return Result.error("未登陆或没有权限");
+        }
+        Long id = Long.valueOf(map.get("reply-id"));
+        String content = map.get("reply-content");
+        Feedback feedback = new Feedback();
+        feedback.setId(id);
+        feedback.setReply(content);
+        //设置状态为已处理
+        feedback.setStatus(FeedbackStatus.HAS_HANDLE);
+
+        try {
+            feedbackService.updateById(feedback);
+            return Result.success("已回复");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error("操作失败");
+        }
     }
 
 

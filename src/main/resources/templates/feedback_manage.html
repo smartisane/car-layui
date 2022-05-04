@@ -35,7 +35,8 @@
                                 </div>
                                 <div class="layui-col-md2">
                                     <div class="layui-row" style="text-align: right;margin-bottom: 10px;">
-                                        <p th:text="${feedback.status}==0?'待处理':'已处理'"></p>
+                                        <p th:if="${feedback.status}==0" style="color: red">待处理</p>
+                                        <p th:if="${feedback.status}==1" style="color: green">已处理</p>
                                     </div>
                                     <div th:if="${session.user.role}=='admin' and ${feedback.status}==0" class="layui-row" style="text-align: right">
                                         <button th:onclick="'reply('+${feedback.id}+')'"
@@ -53,5 +54,72 @@
     </div>
 </div>
 <!--end-->
+<script>
+    let reply;
+    layui.use(['layer','form','jquery'],function () {
+        const layer = layui.layer;
+        const form = layui.form;
+        const $ = layui.jquery;
+
+        //回复按钮单击事件
+        reply = function(id){
+            //设置表单的隐藏元素id值
+            $("#reply-id").val(id);
+            $("#reply-content").val('');
+            layer.open({
+                type: 1,//重要
+                title: '回复',
+                resize: false,
+                anim: 4,//左边滚入
+                area: ['500px', '312px'],
+                content: $('#replayForm')
+            });
+        }
+
+        form.on('submit(submitReply)', function (data) {
+            // layer.msg(JSON.stringify(data.field));
+            $.ajax({
+                type: 'POST',
+                url: '/submitReply',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(data.field),
+                success: function (res) {
+                    if (res.code === 1) {
+                        layer.msg(res.msg);
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                },
+                error: function (err) {
+                    layer.msg(err);
+                }
+            });//end ajax
+            return false;
+        });
+
+    });
+</script>
+<!--编辑资讯，弹出层表单-->
+<form class="layui-form layui-form-pane" style="display: none;padding: 10px;" id="replayForm">
+
+    <!--传递id，根据id进行更新操作-->
+    <input type="hidden" id="reply-id" name="reply-id">
+
+    <label style="font-size: 10px; color: #009688">回复内容</label>
+    <div class="layui-form-item">
+        <textarea name="reply-content" id="reply-content" placeholder="请输入内容" class="layui-textarea"
+                  style="height: 155px;"></textarea>
+    </div>
+    <div class="layui-form-item">
+        <button lay-submit lay-filter="submitReply" class="layui-btn" style="width: 100%;">
+            <i class="layui-icon layui-icon-release"></i>
+            提交
+        </button>
+    </div>
+</form>
 </body>
 </html>
