@@ -588,3 +588,478 @@ java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Long
 2022-05-04 16:14:48.367 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
 2022-05-04 16:14:48.368 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
 2022-05-04 16:14:48.370 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:18:30.491 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:18:30.492 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:18:30.494 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:18:32.688 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:18:32.688 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:18:32.689 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:18:33.434 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:18:33.434 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:18:33.435 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:18:45.145 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:18:45.145 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:18:45.147 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:18:55.498 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:18:55.498 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:18:55.500 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:19:09.995 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.UserMapper.selectOne        : ==>  Preparing: SELECT id,name,username,password,phone,email,create_time,id_card,avatar,status,role,sex,is_deleted FROM user WHERE is_deleted=0 AND username = ? 
+2022-05-04 16:19:09.995 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.UserMapper.selectOne        : ==> Parameters: zhangsan(String)
+2022-05-04 16:19:10.003 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.UserMapper.selectOne        : <==      Total: 1
+2022-05-04 16:19:10.003  INFO 1432 --- [http-nio-8080-exec-2] c.y.carlayui.service.UserServiceImpl     : userService中通过subject获取的principal=User(id=1, name=张三, username=zhangsan, password=123456, phone=13333333332, email=111222@qq.com, createTime=Mon Apr 25 14:23:01 CST 2022, idCard=341181200000000000, avatar=/img/default-avatar.jpg, status=1, role=customer, sex=保密, mod=0, isDeleted=0)
+2022-05-04 16:19:11.580 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:19:11.582 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:19:11.587 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:19:57.634 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback WHERE user_id = ? 
+2022-05-04 16:19:57.635 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 1(Long)
+2022-05-04 16:19:57.636 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:20:15.712 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:20:15.712 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long)
+2022-05-04 16:20:15.714 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE customer_id = ? LIMIT ?,? 
+2022-05-04 16:20:15.714 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long), 0(Long), 6(Long)
+2022-05-04 16:20:15.720 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 1
+2022-05-04 16:20:25.211 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectById      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE id=? 
+2022-05-04 16:20:25.211 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectById      : ==> Parameters: 9(String)
+2022-05-04 16:20:25.211 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectById      : <==      Total: 1
+2022-05-04 16:20:25.223 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.updateById      : ==>  Preparing: UPDATE car_order SET create_time=?, customer_id=?, owner_id=?, car_id=?, status=?, rent=?, deposit=?, days=?, total=?, start_date=?, end_date=? WHERE id=? 
+2022-05-04 16:20:25.224 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.updateById      : ==> Parameters: 2022-05-01 14:27:21.0(Timestamp), 1(Long), 0(Long), 44(Long), 2(Integer), 2222(Integer), 2222(Integer), 2(Long), 4444(Integer), 2022-05-01 00:00:00.0(Timestamp), 2022-05-03 00:00:00.0(Timestamp), 9(Long)
+2022-05-04 16:20:25.237 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.updateById      : <==    Updates: 1
+2022-05-04 16:20:25.260 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:20:25.260 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long)
+2022-05-04 16:20:25.261 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE customer_id = ? LIMIT ?,? 
+2022-05-04 16:20:25.262 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long), 0(Long), 6(Long)
+2022-05-04 16:20:25.263 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 1
+2022-05-04 16:20:33.839 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:20:33.841 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:20:33.845 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:20:43.305 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.UserMapper.selectOne        : ==>  Preparing: SELECT id,name,username,password,phone,email,create_time,id_card,avatar,status,role,sex,is_deleted FROM user WHERE is_deleted=0 AND username = ? 
+2022-05-04 16:20:43.305 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.UserMapper.selectOne        : ==> Parameters: admin(String)
+2022-05-04 16:20:43.305 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.UserMapper.selectOne        : <==      Total: 1
+2022-05-04 16:20:43.305  INFO 1432 --- [http-nio-8080-exec-10] c.y.carlayui.service.UserServiceImpl     : userService中通过subject获取的principal=User(id=0, name=admin, username=admin, password=123, phone=15555021375, email=3258990296@qq.com, createTime=null, idCard=000000000000000000, avatar=/img/default-avatar.jpg, status=1, role=admin, sex=null, mod=0, isDeleted=0)
+2022-05-04 16:20:44.893 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:20:44.895 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:20:44.900 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:21:04.745 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:21:04.746 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:21:04.747 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:21:33.315 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.carlayui.controller.CarController    : submitSearch...
+2022-05-04 16:21:33.316 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.carlayui.controller.CarController    : address=null
+2022-05-04 16:21:33.316 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.carlayui.controller.CarController    : type=null
+2022-05-04 16:21:33.316 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.carlayui.controller.CarController    : rent=null
+2022-05-04 16:21:33.316 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.carlayui.controller.CarController    : cur=1
+2022-05-04 16:21:33.320 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 AND status = ? 
+2022-05-04 16:21:33.321 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: 1(Integer)
+2022-05-04 16:21:33.323 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC LIMIT ?,? 
+2022-05-04 16:21:33.323 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: 1(Integer), 0(Long), 6(Long)
+2022-05-04 16:21:33.324 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 6
+2022-05-04 16:21:33.431 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:21:33.431 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:21:33.433 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:21:38.538 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 
+2022-05-04 16:21:38.538 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-04 16:21:38.538 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 7
+2022-05-04 16:21:38.700 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:21:38.700 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:21:38.701 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:21:41.894 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:21:41.895 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:21:41.896 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:21:46.165 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:21:46.165 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:21:46.167 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:21:46.362 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:21:46.362 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:21:46.365 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:21:55.700 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:21:55.701 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:21:55.704 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:22:02.078 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.UserMapper.selectOne        : ==>  Preparing: SELECT id,name,username,password,phone,email,create_time,id_card,avatar,status,role,sex,is_deleted FROM user WHERE is_deleted=0 AND username = ? 
+2022-05-04 16:22:02.078 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.UserMapper.selectOne        : ==> Parameters: zhangsan(String)
+2022-05-04 16:22:02.080 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.UserMapper.selectOne        : <==      Total: 1
+2022-05-04 16:22:02.082  INFO 1432 --- [http-nio-8080-exec-9] c.y.carlayui.service.UserServiceImpl     : userService中通过subject获取的principal=User(id=1, name=张三, username=zhangsan, password=123456, phone=13333333332, email=111222@qq.com, createTime=Mon Apr 25 14:23:01 CST 2022, idCard=341181200000000000, avatar=/img/default-avatar.jpg, status=1, role=customer, sex=保密, mod=0, isDeleted=0)
+2022-05-04 16:22:03.609 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:22:03.610 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:22:03.612 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:22:08.173 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback WHERE user_id = ? 
+2022-05-04 16:22:08.173 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 1(Long)
+2022-05-04 16:22:08.177 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:22:12.302 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:22:12.302 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long)
+2022-05-04 16:22:12.304 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE customer_id = ? LIMIT ?,? 
+2022-05-04 16:22:12.304 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long), 0(Long), 6(Long)
+2022-05-04 16:22:12.304 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 1
+2022-05-04 16:22:19.125 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-04 16:22:19.125 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-04 16:22:19.126 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-04 16:22:19.127 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-04 16:22:19.129 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-04 16:22:22.205 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-04 16:22:22.206 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-04 16:22:22.208 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-04 16:22:22.209 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 6(Long), 6(Long)
+2022-05-04 16:22:22.211 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 2
+2022-05-04 16:23:15.025 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectById      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE id=? 
+2022-05-04 16:23:15.025 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectById      : ==> Parameters: 9(String)
+2022-05-04 16:23:15.025 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectById      : <==      Total: 1
+2022-05-04 16:23:19.273 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectById      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE id=? 
+2022-05-04 16:23:19.273 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectById      : ==> Parameters: 9(Integer)
+2022-05-04 16:23:19.273 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectById      : <==      Total: 1
+2022-05-04 16:23:19.282 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.updateById      : ==>  Preparing: UPDATE car_order SET create_time=?, customer_id=?, owner_id=?, car_id=?, status=?, rent=?, deposit=?, days=?, total=?, start_date=?, end_date=? WHERE id=? 
+2022-05-04 16:23:19.283 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.updateById      : ==> Parameters: 2022-05-01 14:27:21.0(Timestamp), 1(Long), 0(Long), 44(Long), 3(Integer), 2222(Integer), 2222(Integer), 2(Long), 4444(Integer), 2022-05-01 00:00:00.0(Timestamp), 2022-05-03 00:00:00.0(Timestamp), 9(Long)
+2022-05-04 16:23:19.290 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.updateById      : <==    Updates: 1
+2022-05-04 16:23:19.308 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-04 16:23:19.308 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-04 16:23:19.310 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-04 16:23:19.310 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-04 16:23:19.315 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-04 16:23:21.593 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-04 16:23:21.594 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-04 16:23:21.595 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-04 16:23:21.597 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 6(Long), 6(Long)
+2022-05-04 16:23:21.598 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 2
+2022-05-04 16:23:27.896 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:23:27.897 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long)
+2022-05-04 16:23:27.898 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE customer_id = ? LIMIT ?,? 
+2022-05-04 16:23:27.898 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long), 0(Long), 6(Long)
+2022-05-04 16:23:27.899 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 1
+2022-05-04 16:23:47.671 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectById      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE id=? 
+2022-05-04 16:23:47.671 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectById      : ==> Parameters: 9(String)
+2022-05-04 16:23:47.671 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectById      : <==      Total: 1
+2022-05-04 16:23:47.671 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.updateById      : ==>  Preparing: UPDATE car_order SET create_time=?, customer_id=?, owner_id=?, car_id=?, status=?, rent=?, deposit=?, days=?, total=?, start_date=?, end_date=? WHERE id=? 
+2022-05-04 16:23:47.671 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.updateById      : ==> Parameters: 2022-05-01 14:27:21.0(Timestamp), 1(Long), 0(Long), 44(Long), 2(Integer), 2222(Integer), 2222(Integer), 2(Long), 4444(Integer), 2022-05-01 00:00:00.0(Timestamp), 2022-05-03 00:00:00.0(Timestamp), 9(Long)
+2022-05-04 16:23:47.684 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.updateById      : <==    Updates: 1
+2022-05-04 16:23:47.705 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:23:47.705 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long)
+2022-05-04 16:23:47.707 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE customer_id = ? LIMIT ?,? 
+2022-05-04 16:23:47.707 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Long), 0(Long), 6(Long)
+2022-05-04 16:23:47.708 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 1
+2022-05-04 16:23:51.851 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-04 16:23:51.851 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-04 16:23:51.853 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-04 16:23:51.853 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-04 16:23:51.854 DEBUG 1432 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-04 16:23:53.103 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-04 16:23:53.103 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-04 16:23:53.105 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-04 16:23:53.106 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 6(Long), 6(Long)
+2022-05-04 16:23:53.108 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 2
+2022-05-04 16:23:59.219 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectById      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE id=? 
+2022-05-04 16:23:59.219 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectById      : ==> Parameters: 9(Integer)
+2022-05-04 16:23:59.220 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectById      : <==      Total: 1
+2022-05-04 16:23:59.228 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.updateById      : ==>  Preparing: UPDATE car_order SET create_time=?, customer_id=?, owner_id=?, car_id=?, status=?, rent=?, deposit=?, days=?, total=?, start_date=?, end_date=? WHERE id=? 
+2022-05-04 16:23:59.229 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.updateById      : ==> Parameters: 2022-05-01 14:27:21.0(Timestamp), 1(Long), 0(Long), 44(Long), 1(Integer), 2222(Integer), 2222(Integer), 3(Long), 8888(Integer), 2022-05-01 00:00:00.0(Timestamp), 2022-05-04 16:23:59.221(Timestamp), 9(Long)
+2022-05-04 16:23:59.235 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.updateById      : <==    Updates: 1
+2022-05-04 16:23:59.237 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.selectById        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE id=? AND is_deleted=0 
+2022-05-04 16:23:59.237 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.selectById        : ==> Parameters: 44(Long)
+2022-05-04 16:23:59.237 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.selectById        : <==      Total: 1
+2022-05-04 16:23:59.243 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.selectById        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE id=? AND is_deleted=0 
+2022-05-04 16:23:59.244 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.selectById        : ==> Parameters: 44(Long)
+2022-05-04 16:23:59.245 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.selectById        : <==      Total: 1
+2022-05-04 16:23:59.246 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.updateById        : ==>  Preparing: UPDATE car SET create_time=?, user_id=?, car_id=?, type=?, car_describe=?, rent=?, deposit=?, status=?, thumbnail_url=?, slide_url=?, address=?, contact_name=?, contact_phone=? WHERE id=? AND is_deleted=0 
+2022-05-04 16:23:59.256 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.updateById        : ==> Parameters: 2022-04-03 16:56:55.0(Timestamp), 0(Long), test(String), SUV(String), test(String), 2222(Integer), 2222(Integer), 1(Integer), /upload/2022-04-03-16-56-37.jpeg(String), ["/upload/2022-04-03-16-56-37.jpeg"](String), 马鞍山(String), 张三(String), 16666666666(String), 44(Long)
+2022-05-04 16:23:59.256 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.updateById        : <==    Updates: 1
+2022-05-04 16:23:59.280 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-04 16:23:59.280 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-04 16:23:59.281 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-04 16:23:59.282 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-04 16:23:59.284 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-04 16:24:01.273 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-04 16:24:01.273 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-04 16:24:01.275 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-04 16:24:01.277 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 6(Long), 6(Long)
+2022-05-04 16:24:01.279 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 2
+2022-05-04 16:24:19.326 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.MarkMapper.selectMarkInfo   : ==>  Preparing: select mark.id,mark.user_id,mark.create_time,mark.car_id,car.type,car.rent,car.thumbnail_url,car.address,car.car_describe from mark,car where mark.user_id=? and mark.car_id=car.id 
+2022-05-04 16:24:19.326 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.MarkMapper.selectMarkInfo   : ==> Parameters: 0(Long)
+2022-05-04 16:24:19.330 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.MarkMapper.selectMarkInfo   : <==      Total: 4
+2022-05-04 16:24:25.635 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:24:25.636 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:24:25.638 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:24:26.525 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:24:26.526 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:24:26.527 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:24:28.039 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:24:28.040 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:24:28.041 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:24:29.272 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:24:29.272 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:24:29.274 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 2
+2022-05-04 16:24:30.212 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 
+2022-05-04 16:24:30.213 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-04 16:24:30.214 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 7
+2022-05-04 16:24:53.528 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.NewsMapper.deleteById       : ==>  Preparing: UPDATE news SET is_deleted=1 WHERE id=? AND is_deleted=0 
+2022-05-04 16:24:53.528 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.NewsMapper.deleteById       : ==> Parameters: 7(String)
+2022-05-04 16:24:53.535 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.NewsMapper.deleteById       : <==    Updates: 1
+2022-05-04 16:24:55.096 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 
+2022-05-04 16:24:55.097 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-04 16:24:55.105 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 6
+2022-05-04 16:24:58.048 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.NewsMapper.deleteById       : ==>  Preparing: UPDATE news SET is_deleted=1 WHERE id=? AND is_deleted=0 
+2022-05-04 16:24:58.048 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.NewsMapper.deleteById       : ==> Parameters: 6(String)
+2022-05-04 16:24:58.057 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.NewsMapper.deleteById       : <==    Updates: 1
+2022-05-04 16:24:59.611 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 
+2022-05-04 16:24:59.612 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-04 16:24:59.615 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 5
+2022-05-04 16:26:51.742  INFO 1432 --- [Thread-48] com.alibaba.druid.pool.DruidDataSource   : {dataSource-9} closed
+2022-05-04 16:26:52.181  INFO 1432 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Starting CarLayuiApplication using Java 1.8.0_251 on LAPTOP-53OU72OO with PID 1432 (D:\projects\idea\car-layui\target\classes started by artisane in D:\projects\idea\car-layui)
+2022-05-04 16:26:52.181 DEBUG 1432 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-04 16:26:52.182  INFO 1432 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-04 16:26:52.343  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$b422203d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.350  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$b6b55ee2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.353  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.yimin.carlayui.config.ShiroConfig$$EnhancerBySpringCGLIB$$f3c08f2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.364  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.365  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myBatisPlusConfig' of type [com.yimin.carlayui.config.MyBatisPlusConfig$$EnhancerBySpringCGLIB$$5945b5e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.366  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.369  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$ded1af27] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.369  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.372  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.376  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.388  INFO 1432 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-10} inited
+2022-05-04 16:26:52.402  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.403  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.419  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.421  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy268] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.423  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'realm' of type [com.yimin.carlayui.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.425  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.427  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.428  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:52.497  INFO 1432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-04 16:26:52.498  INFO 1432 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-04 16:26:52.498  INFO 1432 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-04 16:26:52.510  INFO 1432 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-04 16:26:52.510  INFO 1432 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 328 ms
+2022-05-04 16:26:52.849  INFO 1432 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-04 16:26:52.964  INFO 1432 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-04 16:26:52.983  INFO 1432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-04 16:26:52.989  INFO 1432 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Started CarLayuiApplication in 0.827 seconds (JVM running for 3679.548)
+2022-05-04 16:26:52.990  INFO 1432 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-04 16:26:54.823  INFO 1432 --- [Thread-52] com.alibaba.druid.pool.DruidDataSource   : {dataSource-10} closed
+2022-05-04 16:26:55.061  INFO 1432 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Starting CarLayuiApplication using Java 1.8.0_251 on LAPTOP-53OU72OO with PID 1432 (D:\projects\idea\car-layui\target\classes started by artisane in D:\projects\idea\car-layui)
+2022-05-04 16:26:55.062 DEBUG 1432 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-04 16:26:55.062  INFO 1432 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-04 16:26:55.236  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$b422203d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.241  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$b6b55ee2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.242  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.yimin.carlayui.config.ShiroConfig$$EnhancerBySpringCGLIB$$f3c08f2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.250  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.251  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myBatisPlusConfig' of type [com.yimin.carlayui.config.MyBatisPlusConfig$$EnhancerBySpringCGLIB$$5945b5e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.251  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.254  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$ded1af27] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.255  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.256  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.256  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.271  INFO 1432 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-11} inited
+2022-05-04 16:26:55.275  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.276  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.293  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.294  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy287] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.297  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'realm' of type [com.yimin.carlayui.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.299  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.300  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.302  INFO 1432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-04 16:26:55.367  INFO 1432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-04 16:26:55.367  INFO 1432 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-04 16:26:55.368  INFO 1432 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-04 16:26:55.381  INFO 1432 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-04 16:26:55.381  INFO 1432 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 318 ms
+2022-05-04 16:26:55.689  INFO 1432 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-04 16:26:55.771  INFO 1432 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-04 16:26:55.788  INFO 1432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-04 16:26:55.790  INFO 1432 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Started CarLayuiApplication in 0.751 seconds (JVM running for 3682.351)
+2022-05-04 16:26:55.790  INFO 1432 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-04 16:26:59.221  INFO 1432 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-04 16:26:59.224  INFO 1432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-04 16:26:59.225  INFO 1432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-04 16:26:59.234 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 ORDER BY create_time DESC 
+2022-05-04 16:26:59.235 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-04 16:26:59.237 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 5
+2022-05-04 16:27:56.960 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.carlayui.controller.NewsController   : news=News(id=null, createTime=null, title=网站上线啦, content=网站上线啦，快来体验吧, isDeleted=null)
+2022-05-04 16:27:56.968 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.carlayui.mapper.NewsMapper.insert    : ==>  Preparing: INSERT INTO news ( create_time, title, content ) VALUES ( ?, ?, ? ) 
+2022-05-04 16:27:56.970 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.carlayui.mapper.NewsMapper.insert    : ==> Parameters: 2022-05-04 16:27:56.96(Timestamp), 网站上线啦(String), 网站上线啦，快来体验吧(String)
+2022-05-04 16:27:56.979 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.carlayui.mapper.NewsMapper.insert    : <==    Updates: 1
+2022-05-04 16:27:58.554 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 
+2022-05-04 16:27:58.555 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-04 16:27:58.558 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 6
+2022-05-04 16:28:17.304 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 ORDER BY create_time DESC 
+2022-05-04 16:28:17.305 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-04 16:28:17.306 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 6
+2022-05-04 16:28:39.580 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:28:39.581 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:28:39.581 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:30:30.789 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.carlayui.service.UserServiceImpl     : 即将注册user：User(id=null, name=小明, username=xiaoming, password=123, phone=15555021234, email=xiaoming@qq.com, createTime=Wed May 04 16:30:30 CST 2022, idCard=341181200005068888, avatar=/img/default-avatar.jpg, status=1, role=customer, sex=保密, mod=0, isDeleted=null)
+2022-05-04 16:30:30.790 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.carlayui.mapper.UserMapper.insert    : ==>  Preparing: INSERT INTO user ( name, username, password, phone, email, create_time, id_card, avatar, status, role, sex ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2022-05-04 16:30:30.794 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.carlayui.mapper.UserMapper.insert    : ==> Parameters: 小明(String), xiaoming(String), 123(String), 15555021234(String), xiaoming@qq.com(String), 2022-05-04 16:30:30.789(Timestamp), 341181200005068888(String), /img/default-avatar.jpg(String), 1(Integer), customer(String), 保密(String)
+2022-05-04 16:30:30.796 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.carlayui.mapper.UserMapper.insert    : <==    Updates: 1
+2022-05-04 16:30:32.376 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:30:32.377 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:30:32.382 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:30:37.087 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.UserMapper.selectOne        : ==>  Preparing: SELECT id,name,username,password,phone,email,create_time,id_card,avatar,status,role,sex,is_deleted FROM user WHERE is_deleted=0 AND username = ? 
+2022-05-04 16:30:37.087 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.UserMapper.selectOne        : ==> Parameters: xiaoming(String)
+2022-05-04 16:30:37.087 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.UserMapper.selectOne        : <==      Total: 1
+2022-05-04 16:30:37.094  INFO 1432 --- [http-nio-8080-exec-2] c.y.carlayui.service.UserServiceImpl     : userService中通过subject获取的principal=User(id=15, name=小明, username=xiaoming, password=123, phone=15555021234, email=xiaoming@qq.com, createTime=Wed May 04 16:30:31 CST 2022, idCard=341181200005068888, avatar=/img/default-avatar.jpg, status=1, role=customer, sex=保密, mod=0, isDeleted=0)
+2022-05-04 16:30:38.641 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:30:38.643 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:30:38.652 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:30:44.285 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:30:44.285 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 15(Long)
+2022-05-04 16:30:46.806 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.MarkMapper.selectMarkInfo   : ==>  Preparing: select mark.id,mark.user_id,mark.create_time,mark.car_id,car.type,car.rent,car.thumbnail_url,car.address,car.car_describe from mark,car where mark.user_id=? and mark.car_id=car.id 
+2022-05-04 16:30:46.807 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.MarkMapper.selectMarkInfo   : ==> Parameters: 15(Long)
+2022-05-04 16:30:46.808 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.MarkMapper.selectMarkInfo   : <==      Total: 0
+2022-05-04 16:30:48.851 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback WHERE user_id = ? 
+2022-05-04 16:30:48.851 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 15(Long)
+2022-05-04 16:30:48.851 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 0
+2022-05-04 16:30:51.482 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:30:51.483 DEBUG 1432 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 15(Long)
+2022-05-04 16:30:52.340 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback WHERE user_id = ? 
+2022-05-04 16:30:52.340 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 15(Long)
+2022-05-04 16:30:52.341 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 0
+2022-05-04 16:31:26.762 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback WHERE user_id = ? 
+2022-05-04 16:31:26.763 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 15(Long)
+2022-05-04 16:31:26.763 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 0
+2022-05-04 16:31:28.420 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:31:28.421 DEBUG 1432 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 15(Long)
+2022-05-04 16:31:31.038 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.MarkMapper.selectMarkInfo   : ==>  Preparing: select mark.id,mark.user_id,mark.create_time,mark.car_id,car.type,car.rent,car.thumbnail_url,car.address,car.car_describe from mark,car where mark.user_id=? and mark.car_id=car.id 
+2022-05-04 16:31:31.039 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.MarkMapper.selectMarkInfo   : ==> Parameters: 15(Long)
+2022-05-04 16:31:31.040 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.MarkMapper.selectMarkInfo   : <==      Total: 0
+2022-05-04 16:31:33.820 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:31:33.820 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 15(Long)
+2022-05-04 16:31:34.497 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback WHERE user_id = ? 
+2022-05-04 16:31:34.498 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 15(Long)
+2022-05-04 16:31:34.498 DEBUG 1432 --- [http-nio-8080-exec-10] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 0
+2022-05-04 16:31:37.686 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE customer_id = ? 
+2022-05-04 16:31:37.686 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 15(Long)
+2022-05-04 16:31:38.852 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.MarkMapper.selectMarkInfo   : ==>  Preparing: select mark.id,mark.user_id,mark.create_time,mark.car_id,car.type,car.rent,car.thumbnail_url,car.address,car.car_describe from mark,car where mark.user_id=? and mark.car_id=car.id 
+2022-05-04 16:31:38.853 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.MarkMapper.selectMarkInfo   : ==> Parameters: 15(Long)
+2022-05-04 16:31:38.854 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.MarkMapper.selectMarkInfo   : <==      Total: 0
+2022-05-04 16:31:41.109 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-04 16:31:41.109 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-04 16:31:41.111 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-04 16:31:41.967 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 ORDER BY create_time DESC 
+2022-05-04 16:31:41.968 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-04 16:31:41.969 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 6
+2022-05-04 16:32:45.208 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback WHERE user_id = ? ORDER BY create_time DESC 
+2022-05-04 16:32:45.208 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 15(Long)
+2022-05-04 16:32:45.208 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 0
+2022-05-04 16:32:45.208 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.controller.FeedbackController      : feedbackList=[]
+2022-05-04 16:32:45.216 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.FeedbackMapper.insert       : ==>  Preparing: INSERT INTO feedback ( create_time, title, content, user_id, username, status ) VALUES ( ?, ?, ?, ?, ?, ? ) 
+2022-05-04 16:32:45.216 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.FeedbackMapper.insert       : ==> Parameters: 2022-05-04 16:32:45.208(Timestamp), 网站真不戳(String), 我是小明，你的网站很不错，加油(String), 15(Long), xiaoming(String), 0(Integer)
+2022-05-04 16:32:45.220 DEBUG 1432 --- [http-nio-8080-exec-2] c.y.c.mapper.FeedbackMapper.insert       : <==    Updates: 1
+2022-05-04 16:32:49.142 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback WHERE user_id = ? ORDER BY create_time DESC 
+2022-05-04 16:32:49.142 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 15(Long)
+2022-05-04 16:32:49.142 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 1
+2022-05-04 16:32:49.142 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.controller.FeedbackController      : feedbackList=[Feedback(id=3, createTime=Wed May 04 16:32:45 CST 2022, title=网站真不戳, content=我是小明，你的网站很不错，加油, userId=15, username=xiaoming, status=0, reply=null)]
+2022-05-04 16:32:56.820 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:32:56.822 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:32:56.823 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 3
+2022-05-04 16:33:08.608 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback WHERE user_id = ? 
+2022-05-04 16:33:08.608 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 15(Long)
+2022-05-04 16:33:08.609 DEBUG 1432 --- [http-nio-8080-exec-8] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 1
+2022-05-04 16:33:49.000 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-04 16:33:49.000 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-04 16:33:49.000 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-04 16:33:49.000 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-04 16:33:49.004 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-04 16:33:52.185 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-04 16:33:52.185 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-04 16:33:52.186 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 3
+2022-05-04 16:33:54.039 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 
+2022-05-04 16:33:54.040 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-04 16:33:54.041 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 6
+2022-05-04 16:33:55.406 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 
+2022-05-04 16:33:55.406 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: 
+2022-05-04 16:33:55.408 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 LIMIT ?,? 
+2022-05-04 16:33:55.408 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: 0(Long), 6(Long)
+2022-05-04 16:33:55.410 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 6
+2022-05-04 16:33:55.411 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.carlayui.controller.CarController    : carPage.getSize()6
+2022-05-04 16:33:55.411 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.carlayui.controller.CarController    : carPage.getPages()=3
+2022-05-04 16:33:55.411 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.carlayui.controller.CarController    : carPage.getTotal()17
+2022-05-04 16:33:55.411 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.carlayui.controller.CarController    : carPage.getCurrent()1
+2022-05-04 16:33:55.412 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.carlayui.controller.CarController    : carPage.getRecords()[Car(id=35, createTime=Fri Mar 25 22:15:12 CST 2022, userId=0, carId=001, type=轿车, carDescribe=大黄蜂, rent=66, deposit=66, status=1, thumbnailUrl=/upload/2022-03-25-22-14-47.jpeg, slideUrl=["/upload/2022-03-25-22-14-47.jpeg","/upload/2022-03-25-22-14-50.jpeg"], address=马鞍山, contactName=张三, contactPhone=16666666666, key=null, isDeleted=0, slideList=null), Car(id=36, createTime=Fri Mar 25 22:18:28 CST 2022, userId=0, carId=002, type=轿车, carDescribe=略, rent=88, deposit=88, status=0, thumbnailUrl=/upload/2022-03-25-22-17-50.jpeg, slideUrl=["/upload/2022-03-25-22-17-50.jpeg"], address=马鞍山, contactName=叶, contactPhone=15555021375, key=null, isDeleted=0, slideList=null), Car(id=37, createTime=Fri Mar 25 22:23:37 CST 2022, userId=0, carId=003, type=SUV, carDescribe=略, rent=66, deposit=66, status=1, thumbnailUrl=/upload/2022-03-25-22-23-03.jpeg, slideUrl=["/upload/2022-03-25-22-23-03.jpeg"], address=马鞍山, contactName=叶, contactPhone=15555021375, key=null, isDeleted=0, slideList=null), Car(id=38, createTime=Fri Mar 25 22:24:27 CST 2022, userId=0, carId=004, type=SUV, carDescribe=略, rent=88, deposit=88, status=-1, thumbnailUrl=/upload/2022-03-25-22-24-14.jpeg, slideUrl=["/upload/2022-03-25-22-24-14.jpeg"], address=马鞍山, contactName=叶, contactPhone=15555021375, key=null, isDeleted=0, slideList=null), Car(id=39, createTime=Mon Apr 25 15:01:50 CST 2022, userId=0, carId=005, type=SUV, carDescribe=阿尔法·罗密欧（Alfa Romeo）是意大利著名的轿车和跑车制造商，创建于1910年，总部设在米兰。公司原名ALFA（Anonima Lombarda Fabbrica Automobili，伦巴第汽车制造厂），其前身最早可追溯至1906年由Alexandre Darracq创立于那不勒斯后迁至米兰的一个汽车公司。, rent=88, deposit=88, status=1, thumbnailUrl=/upload/2022-04-22-15-00-13.jpg, slideUrl=["/upload/2022-04-22-15-00-13.jpg","/upload/2022-04-22-15-00-16.jpg","/upload/2022-04-22-15-00-20.jpg","/upload/2022-04-22-15-00-23.jpg","/upload/2022-04-22-15-00-26.jpg","/upload/2022-04-22-15-00-30.jpg"], address=马鞍山安徽工业大学, contactName=燚旻阿, contactPhone=15555021375, key=null, isDeleted=0, slideList=null), Car(id=40, createTime=Mon Apr 04 10:48:55 CST 2022, userId=0, carId=006, type=跑车, carDescribe=小蓝车，很蓝的啦，哈哈哈哈, rent=66, deposit=66, status=1, thumbnailUrl=/upload/2022-03-25-22-25-53.jpeg, slideUrl=["/upload/2022-03-25-22-25-53.jpeg"], address=滁州, contactName=叶, contactPhone=15555021375, key=null, isDeleted=0, slideList=null)]
+2022-05-04 16:34:01.046 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectById        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE id=? AND is_deleted=0 
+2022-05-04 16:34:01.047 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectById        : ==> Parameters: 40(String)
+2022-05-04 16:34:01.048 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.CarMapper.selectById        : <==      Total: 1
+2022-05-04 16:34:01.049 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.carlayui.controller.CarController    : slideList==>[/upload/2022-03-25-22-25-53.jpeg]
+2022-05-04 16:34:01.051 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.MarkMapper.selectOne        : ==>  Preparing: SELECT id,create_time,user_id,car_id FROM mark WHERE user_id = ? AND car_id = ? 
+2022-05-04 16:34:01.051 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.MarkMapper.selectOne        : ==> Parameters: 0(Long), 40(Long)
+2022-05-04 16:34:01.054 DEBUG 1432 --- [http-nio-8080-exec-5] c.y.c.mapper.MarkMapper.selectOne        : <==      Total: 1
+2022-05-04 16:34:10.833 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectById        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE id=? AND is_deleted=0 
+2022-05-04 16:34:10.834 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectById        : ==> Parameters: 38(String)
+2022-05-04 16:34:10.835 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.CarMapper.selectById        : <==      Total: 1
+2022-05-04 16:34:10.835 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.carlayui.controller.CarController    : slideList==>[/upload/2022-03-25-22-24-14.jpeg]
+2022-05-04 16:34:10.838 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.MarkMapper.selectOne        : ==>  Preparing: SELECT id,create_time,user_id,car_id FROM mark WHERE user_id = ? AND car_id = ? 
+2022-05-04 16:34:10.838 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.MarkMapper.selectOne        : ==> Parameters: 0(Long), 38(Long)
+2022-05-04 16:34:10.840 DEBUG 1432 --- [http-nio-8080-exec-1] c.y.c.mapper.MarkMapper.selectOne        : <==      Total: 0
+2022-05-04 16:34:16.576 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.CarMapper.selectById        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE id=? AND is_deleted=0 
+2022-05-04 16:34:16.577 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.CarMapper.selectById        : ==> Parameters: 36(String)
+2022-05-04 16:34:16.578 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.CarMapper.selectById        : <==      Total: 1
+2022-05-04 16:34:16.579 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.carlayui.controller.CarController    : slideList==>[/upload/2022-03-25-22-17-50.jpeg]
+2022-05-04 16:34:16.580 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.MarkMapper.selectOne        : ==>  Preparing: SELECT id,create_time,user_id,car_id FROM mark WHERE user_id = ? AND car_id = ? 
+2022-05-04 16:34:16.581 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.MarkMapper.selectOne        : ==> Parameters: 0(Long), 36(Long)
+2022-05-04 16:34:16.582 DEBUG 1432 --- [http-nio-8080-exec-7] c.y.c.mapper.MarkMapper.selectOne        : <==      Total: 0
+2022-05-04 16:34:30.276 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : submitSearch...
+2022-05-04 16:34:30.276 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : address=
+2022-05-04 16:34:30.276 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : type=
+2022-05-04 16:34:30.276 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : rent=
+2022-05-04 16:34:30.276 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : cur=1
+2022-05-04 16:34:30.279 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 
+2022-05-04 16:34:30.280 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: 
+2022-05-04 16:34:30.281 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 LIMIT ?,? 
+2022-05-04 16:34:30.281 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: 0(Long), 6(Long)
+2022-05-04 16:34:30.282 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 6
+2022-05-04 16:34:34.022 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : submitSearch...
+2022-05-04 16:34:34.022 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : address=
+2022-05-04 16:34:34.022 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : type=SUV
+2022-05-04 16:34:34.022 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : rent=
+2022-05-04 16:34:34.022 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : cur=1
+2022-05-04 16:34:34.025 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 AND type = ? 
+2022-05-04 16:34:34.026 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String)
+2022-05-04 16:34:34.027 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND type = ? LIMIT ?,? 
+2022-05-04 16:34:34.028 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String), 0(Long), 6(Long)
+2022-05-04 16:34:34.028 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 6
+2022-05-04 16:34:35.514 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : submitSearch...
+2022-05-04 16:34:35.514 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : address=
+2022-05-04 16:34:35.515 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : type=SUV
+2022-05-04 16:34:35.515 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : rent=
+2022-05-04 16:34:35.515 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : cur=2
+2022-05-04 16:34:35.518 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 AND type = ? 
+2022-05-04 16:34:35.518 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String)
+2022-05-04 16:34:35.520 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND type = ? LIMIT ?,? 
+2022-05-04 16:34:35.520 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String), 6(Long), 6(Long)
+2022-05-04 16:34:35.521 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 5
+2022-05-04 16:34:36.965 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : submitSearch...
+2022-05-04 16:34:36.965 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : address=
+2022-05-04 16:34:36.965 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : type=SUV
+2022-05-04 16:34:36.965 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : rent=
+2022-05-04 16:34:36.965 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : cur=1
+2022-05-04 16:34:36.969 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 AND type = ? 
+2022-05-04 16:34:36.970 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String)
+2022-05-04 16:34:36.970 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND type = ? LIMIT ?,? 
+2022-05-04 16:34:36.972 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String), 0(Long), 6(Long)
+2022-05-04 16:34:36.973 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 6
+2022-05-04 16:34:39.903 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : submitSearch...
+2022-05-04 16:34:39.904 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : address=
+2022-05-04 16:34:39.904 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : type=SUV
+2022-05-04 16:34:39.904 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : rent=
+2022-05-04 16:34:39.904 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : cur=1
+2022-05-04 16:34:39.907 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 AND type = ? 
+2022-05-04 16:34:39.908 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String)
+2022-05-04 16:34:39.910 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND type = ? LIMIT ?,? 
+2022-05-04 16:34:39.910 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String), 0(Long), 6(Long)
+2022-05-04 16:34:39.910 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 6
+2022-05-04 16:34:41.705 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : submitSearch...
+2022-05-04 16:34:41.706 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : address=
+2022-05-04 16:34:41.706 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : type=SUV
+2022-05-04 16:34:41.706 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : rent=
+2022-05-04 16:34:41.706 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : cur=2
+2022-05-04 16:34:41.708 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 AND type = ? 
+2022-05-04 16:34:41.709 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String)
+2022-05-04 16:34:41.710 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND type = ? LIMIT ?,? 
+2022-05-04 16:34:41.711 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String), 6(Long), 6(Long)
+2022-05-04 16:34:41.712 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 5
+2022-05-04 16:34:43.993 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : submitSearch...
+2022-05-04 16:34:43.993 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : address=
+2022-05-04 16:34:43.993 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : type=SUV
+2022-05-04 16:34:43.994 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : rent=
+2022-05-04 16:34:43.994 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.carlayui.controller.CarController    : cur=1
+2022-05-04 16:34:43.997 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 AND type = ? 
+2022-05-04 16:34:43.997 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String)
+2022-05-04 16:34:43.999 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND type = ? LIMIT ?,? 
+2022-05-04 16:34:44.000 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: SUV(String), 0(Long), 6(Long)
+2022-05-04 16:34:44.001 DEBUG 1432 --- [http-nio-8080-exec-9] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 6

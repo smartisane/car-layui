@@ -1,5 +1,6 @@
 package com.yimin.carlayui.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yimin.carlayui.common.Result;
 import com.yimin.carlayui.entity.News;
 import com.yimin.carlayui.entity.User;
@@ -154,7 +155,10 @@ public class NewsController {
 
     @GetMapping("/newsPage")
     public String newsPage(Model model){
-        List<News> newsList = newsService.list();
+        //降序排列
+        QueryWrapper<News> wrapper = new QueryWrapper<>();
+        wrapper.orderByDesc("create_time");
+        List<News> newsList = newsService.list(wrapper);
         model.addAttribute("newsList",newsList);
         //导航栏资讯高亮
         model.addAttribute("isNewsPage",true);
