@@ -91,7 +91,7 @@
                     <!--点击图片跳到详情页-->
                     <a th:href="@{/detail(id=${car.getId()})}">
                         <!--获取汽车的图片-->
-                        <img style="width: 279px;height: 190px;" th:src="@{${car.getThumbnailUrl()}}"/>
+                        <img style="width: 279px;height: 184px;" th:src="@{${car.getThumbnailUrl()}}"/>
                     </a>
                     <div style="text-align: left;padding: 10px;">
                         <div>
@@ -99,6 +99,7 @@
                             <span style="font-size: 20px;color: #009688;float: right;">[[${car.rent}]]<span
                                     style="font-size: 10px;color:#505353 ">&nbsp;元/天</span></span>
                         </div>
+                        <hr>
                         <p th:text="${car.getCarDescribe()}" class="p-desc"></p>
                     </div>
                 </div>
