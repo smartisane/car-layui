@@ -2,9 +2,11 @@ package com.yimin.carlayui;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yimin.carlayui.common.MarkVo;
+import com.yimin.carlayui.common.Statistics;
 import com.yimin.carlayui.entity.Order;
 import com.yimin.carlayui.entity.User;
 import com.yimin.carlayui.mapper.MarkMapper;
+import com.yimin.carlayui.mapper.OrderMapper;
 import com.yimin.carlayui.mapper.UserMapper;
 import com.yimin.carlayui.service.OrderService;
 import org.junit.jupiter.api.Test;
@@ -55,5 +57,15 @@ class CarLayuiApplicationTests {
         List<MarkVo> markList = markMapper.selectMarkInfo(0L);
         System.out.println(markList.toString());
     }
+
+
+
+
+    @Test
+    void testGetTotalNum(){
+        List<Statistics> statisticsList = orderService.getTotalNum();
+        System.out.println(statisticsList);
+    }
+
 
 }

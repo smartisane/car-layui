@@ -464,10 +464,37 @@ function cancelOrder(orderId,table) {
     })
 }
 
+//退租
 function endOrder(orderId,table) {
     jquery.ajax({
         type: 'POST',
         url: '/endOrder',
+        async: false,
+        contentType: 'application/json',
+        data:JSON.stringify(orderId),
+        success:function (res) {
+            if (res.code === 1) {
+                layer.msg(res.msg);
+                table.reload('orderTable', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                }); //只重载数据
+            } else {
+                layer.msg(res.msg);
+            }
+        },
+        error:function (err) {
+            layer.msg(err);
+        }
+    })
+}
+
+//取消退租
+function cancelEndOrder(orderId,table) {
+    jquery.ajax({
+        type: 'POST',
+        url: '/cancelEndOrder',
         async: false,
         contentType: 'application/json',
         data:JSON.stringify(orderId),

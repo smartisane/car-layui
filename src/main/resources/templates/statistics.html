@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数据分析</title>
+    <div th:replace="common::css"></div>
+    <div th:replace="common::js"></div>
+    <script th:src="@{/js/echarts.js}"></script>
+</head>
+<body style="background-color: whitesmoke;overflow-x: hidden">
+<div th:replace="common::head"></div>
+<div style="margin-top: 10px;">
+    <div class="layui-row layui-col-space20">
+        <div class="layui-col-md3" style="padding-left: 50px">
+            <div th:replace="common::leftmenu"></div>
+        </div>
+        <div class="layui-col-md9" style="background-color:whitesmoke;padding-top: 10px;padding-right: 50px;">
+            <div class="layui-row" style="text-align: center">
+                <div class="layui-panel" style="padding: 10px">
+                    <!--<table id="orderTable" lay-filter="orderTable"></table>-->
+
+                    <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+                    <div id="chart" style="width: 600px;height:400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script th:inline="javascript">
+
+
+    let statisticsList = [[${statisticsList}]];
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('chart'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: '各车型销售额'
+        },
+        tooltip: {},
+        legend: {
+            data: ['销售额']
+        },
+        xAxis: {
+            // data: ['轿车', '跑车', 'SUV']
+            data: [statisticsList[0].type, statisticsList[1].type, statisticsList[2].type]
+        },
+        yAxis: {},
+        series: [
+            {
+                name: '销量',
+                type: 'bar',
+                data: [statisticsList[0].total, statisticsList[1].total, statisticsList[2].total]
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+</body>
+</html>

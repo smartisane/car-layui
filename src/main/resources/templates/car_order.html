@@ -190,6 +190,9 @@
                         }, {
                             title: '申请退租'
                             , id: 'withdraw'
+                        }, {
+                            title: '取消退租'
+                            , id: 'cancelwithdraw'
                         }]
                         , click: function (data, othis) {
                             //根据 id 做出不同操作
@@ -207,6 +210,12 @@
                                 layer.confirm('确认申请退租?', {icon: 3, title: '提示'}, function (index) {
                                     //do something
                                     endOrder(obj.data.id, table)
+                                    layer.close(index);
+                                });
+                            }else if(data.id === 'cancelwithdraw'){
+                                layer.confirm('取消退租?', {icon: 3, title: '提示'}, function (index) {
+                                    //do something
+                                    cancelEndOrder(obj.data.id, table)
                                     layer.close(index);
                                 });
                             }

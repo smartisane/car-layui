@@ -68,7 +68,7 @@ public class OrderController {
 
         User user = (User) session.getAttribute("user");
         if (user == null) {
-            return Result.error("看到右上角的登陆了吗");
+            return Result.error("请先登陆");
         }
 
         String id = map.get("id");
@@ -244,6 +244,8 @@ public class OrderController {
             page = new Page<>(cur, 6);
         }
 
+        //TODO 已经到期的订单做相应的处理
+
         //返回不同角色的订单 已做处理
         User user = (User) session.getAttribute("user");
         if ("admin".equals(user.getRole())) {
@@ -259,6 +261,7 @@ public class OrderController {
             orderPage = orderService.page(page, wrapper);
         }
 
+        //layui表格要求返回的格式
         Map<String, Object> map = new HashMap<>();
         map.put("code", 0);
         map.put("msg", "");
@@ -333,6 +336,43 @@ public class OrderController {
     }
 
 
+
+    /**
+     * 取消退租申请
+     *
+     * @param orderId
+     * @param session
+     * @return
+     */
+    @PostMapping(value = "/cancelEndOrder", produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public Result cancelEndOrder(@RequestBody String orderId, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
+            return Result.error("没有权限");
+        }
+        Order order = orderService.getById(orderId);
+        if (order == null) {
+            return Result.error("订单不存在");
+        } else {
+            Integer status = order.getStatus();
+            //在退租中时，可以取消，回复正常
+            if (status == OrderStatus.END_RENT_APPLY.getValue()) {
+                try {
+                    order.setStatus(OrderStatus.NORMAL.getValue());
+                    orderService.updateById(order);
+                    return Result.success("取消退租成功");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return Result.error("服务器发生错误，取消失败");
+                }
+            }
+            return Result.error("当前状态不允许取消退租申请");
+        }
+
+    }
+
+
     /**
      * 处理退租申请
      */
@@ -369,7 +409,7 @@ public class OrderController {
                         car.setStatus(CarStatus.NOT_RENT);//将汽车改为未出租
                         carService.saveOrUpdate(car);
                     }
-                    return Result.success("已同意退租申请");
+                    return Result.success("已同意退租申请，请及时还车");
                 } catch (Exception e) {
                     e.printStackTrace();
                     return Result.error("服务器发生错误，取消订单失败");

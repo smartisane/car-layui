@@ -501,6 +501,16 @@
             <div class="layui-menu-body-title"><a th:href="@{/carMarkPage}">我的收藏</a></div>
         </li>
 
+        <li class="layui-menu-item-divider"></li>
+
+        <!--销售业绩-->
+        <li th:if="${session?.user?.role}=='admin' and ${isStatisticsPage}" lay-options="{id: 103}" class="layui-menu-item-checked">
+            <div class="layui-menu-body-title"><a th:href="@{/statisticsPage}">数据分析</a></div>
+        </li>
+        <li th:if="${session?.user?.role}=='admin' and !${isStatisticsPage}" lay-options="{id: 103}">
+            <div class="layui-menu-body-title"><a th:href="@{/statisticsPage}">数据分析</a></div>
+        </li>
+
 
     </ul>
 </div>
