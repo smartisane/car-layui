@@ -2,6 +2,7 @@ package com.yimin.carlayui.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yimin.carlayui.common.CarStatus;
 import com.yimin.carlayui.common.Const;
@@ -24,9 +25,7 @@ import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @Slf4j
@@ -230,10 +229,18 @@ public class OrderController {
 
     /**
      * 订单表格数据查询接口
+     * 除page外的参数是过滤条件
      */
     @GetMapping("/carOrderList")
     @ResponseBody
     public Map<String, Object> carOrder(@RequestParam(value = "page", required = false, defaultValue = "1") Long cur,
+                                        @RequestParam(value = "canceled",required = false) String canceled,
+                                        @RequestParam(value = "not_agreement",required = false) String not_agreement,
+                                        @RequestParam(value = "not_pay",required = false) String not_pay,
+                                        @RequestParam(value = "normal",required = false) String normal,
+                                        @RequestParam(value = "finish",required = false) String finish,
+                                        @RequestParam(value = "end_rent_apply",required = false) String end_rent_apply,
+                                        @RequestParam(value = "end_rent_not_allow",required = false) String end_rent_not_allow,
                                         HttpSession session, Model model) {
         IPage<Order> orderPage;
         Page<Order> page;
@@ -244,19 +251,54 @@ public class OrderController {
             page = new Page<>(cur, 6);
         }
 
+        QueryWrapper<Order> wrapper = new QueryWrapper<>();
+        List<Integer> list = new ArrayList<>();
+        if(StringUtils.isNotEmpty(canceled)){
+            log.debug("canceled="+canceled);
+            list.add(-3);
+        }
+        if(StringUtils.isNotEmpty(not_agreement)){
+            log.debug("not_agreement="+not_agreement);
+            list.add(-2);
+        }
+        if(StringUtils.isNotEmpty(not_pay)){
+            log.debug("not_pay="+not_pay);
+            list.add(-1);
+        }
+        if(StringUtils.isNotEmpty(normal)){
+            log.debug("normal="+normal);
+            list.add(0);
+        }
+        if(StringUtils.isNotEmpty(finish)){
+            log.debug("finish="+finish);
+            list.add(1);
+        }
+        if(StringUtils.isNotEmpty(end_rent_apply)){
+            log.debug("end_rent_apply="+end_rent_apply);
+            list.add(2);
+        }
+        if(StringUtils.isNotEmpty(end_rent_not_allow)){
+            log.debug("end_rent_not_allow="+end_rent_not_allow);
+            list.add(3);
+        }
+        if(list.size() >0){
+            wrapper.in("status",list);
+        }
+
+
+
         //TODO 已经到期的订单做相应的处理
 
         //返回不同角色的订单 已做处理
         User user = (User) session.getAttribute("user");
         if ("admin".equals(user.getRole())) {
-            orderPage = orderService.page(page);
+            //每个人都要过滤status条件
+            orderPage = orderService.page(page,wrapper);
         } else if ("owner".equals(user.getRole())) {
-            QueryWrapper<Order> wrapper = new QueryWrapper<>();
             wrapper.eq("owner_id", user.getId());
             orderPage = orderService.page(page, wrapper);
         } else {
             //customer
-            QueryWrapper<Order> wrapper = new QueryWrapper<>();
             wrapper.eq("customer_id", user.getId());
             orderPage = orderService.page(page, wrapper);
         }

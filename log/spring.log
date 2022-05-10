@@ -1087,3 +1087,879 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2022-05-10 20:54:25.136 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.totalNum        : ==>  Preparing: select car.type type,SUM(car_order.total) total from car_order,car where car_order.status=1 group by car.type 
 2022-05-10 20:54:25.136 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.totalNum        : ==> Parameters: 
 2022-05-10 20:54:25.138 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.totalNum        : <==      Total: 3
+2022-05-10 21:21:28.441 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.FeedbackMapper.selectList   : ==>  Preparing: SELECT id,create_time,title,content,user_id,username,status,reply FROM feedback 
+2022-05-10 21:21:28.442 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.FeedbackMapper.selectList   : ==> Parameters: 
+2022-05-10 21:21:28.448 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.FeedbackMapper.selectList   : <==      Total: 3
+2022-05-10 21:21:29.424 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:21:29.425 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:21:29.429 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:21:29.429 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:21:29.446 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:28:51.292 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:28:51.293 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:28:51.295 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:28:51.296 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:28:51.301 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:30:33.161 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:30:33.161 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:30:33.162 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:30:33.163 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:30:33.172 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:33:46.019 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:33:46.020 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:33:46.023 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:33:46.024 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:33:46.030 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:34:54.947 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:34:54.948 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:34:54.951 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:34:54.952 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:34:54.957 DEBUG 10340 --- [http-nio-8080-exec-6] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:35:20.456 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:35:20.458 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:35:20.460 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:35:20.460 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:35:20.464 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:36:01.124 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:36:01.125 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:36:01.127 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:36:01.127 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:36:01.130 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:36:35.820 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:36:35.821 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:36:35.823 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:36:35.823 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:36:35.828 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:37:21.664 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:37:21.665 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:37:21.666 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:37:21.668 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:37:21.671 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:37:43.666 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:37:43.668 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:37:43.670 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:37:43.671 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:37:43.675 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:38:00.752 DEBUG 10340 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:38:00.754 DEBUG 10340 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:38:00.756 DEBUG 10340 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:38:00.758 DEBUG 10340 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:38:00.761 DEBUG 10340 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:39:08.714 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:39:08.715 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:39:08.716 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:39:08.717 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:39:08.720 DEBUG 10340 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:39:51.693 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:39:51.694 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:39:51.695 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:39:51.696 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:39:51.699 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:40:15.945 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:40:15.946 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:40:15.948 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:40:15.949 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:40:15.952 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:40:55.507 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:40:55.508 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:40:55.510 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:40:55.510 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:40:55.513 DEBUG 10340 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:41:27.452 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:41:27.454 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:41:27.456 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:41:27.456 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:41:27.459 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:41:50.090 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:41:50.091 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:41:50.092 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:41:50.093 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:41:50.095 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:42:16.711 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:42:16.711 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:42:16.713 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:42:16.713 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:42:16.715 DEBUG 10340 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:43:00.095 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:43:00.095 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:43:00.097 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:43:00.098 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:43:00.100 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:43:24.409 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:43:24.409 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:43:24.410 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:43:24.411 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:43:24.413 DEBUG 10340 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:43:36.688 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:43:36.689 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:43:36.691 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:43:36.691 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:43:36.693 DEBUG 10340 --- [http-nio-8080-exec-7] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:44:55.921 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:44:55.921 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:44:55.921 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:44:55.921 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:44:55.930 DEBUG 10340 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 21:53:39.283 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 21:53:39.284 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 21:53:39.291 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 21:53:39.291 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 21:53:39.295 DEBUG 10340 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:11:56.140  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Starting CarLayuiApplication using Java 1.8.0_251 on LAPTOP-53OU72OO with PID 19072 (D:\projects\idea\car-layui\target\classes started by artisane in D:\projects\idea\car-layui)
+2022-05-10 22:11:56.140 DEBUG 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-10 22:11:56.140  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 22:11:56.218  INFO 19072 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-10 22:11:56.218  INFO 19072 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-10 22:11:57.080  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a781a8d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.111  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$aa14e77e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.142  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.yimin.carlayui.config.ShiroConfig$$EnhancerBySpringCGLIB$$e72017c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.205  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.205  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myBatisPlusConfig' of type [com.yimin.carlayui.config.MyBatisPlusConfig$$EnhancerBySpringCGLIB$$4ca53e82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.205  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.220  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$d23137c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.220  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.236  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.252  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.361  INFO 19072 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-05-10 22:11:57.486  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.486  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.658  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.752  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy74] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:57.752  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'realm' of type [com.yimin.carlayui.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:58.330  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:58.345  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:58.345  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:11:58.669  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-10 22:11:58.669  INFO 19072 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 22:11:58.669  INFO 19072 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 22:11:58.747  INFO 19072 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 22:11:58.747  INFO 19072 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2529 ms
+2022-05-10 22:11:59.278  INFO 19072 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-10 22:11:59.481  INFO 19072 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 22:11:59.528  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-10 22:11:59.528  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Started CarLayuiApplication in 3.973 seconds (JVM running for 5.21)
+2022-05-10 22:12:14.761  INFO 19072 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-10 22:12:14.762  INFO 19072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-10 22:12:14.763  INFO 19072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-10 22:12:14.901 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-10 22:12:14.924 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-10 22:12:14.946 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-10 22:12:19.905 DEBUG 19072 --- [http-nio-8080-exec-6] c.y.c.mapper.UserMapper.selectOne        : ==>  Preparing: SELECT id,name,username,password,phone,email,create_time,id_card,avatar,status,role,sex,is_deleted FROM user WHERE is_deleted=0 AND username = ? 
+2022-05-10 22:12:19.906 DEBUG 19072 --- [http-nio-8080-exec-6] c.y.c.mapper.UserMapper.selectOne        : ==> Parameters: admin(String)
+2022-05-10 22:12:19.908 DEBUG 19072 --- [http-nio-8080-exec-6] c.y.c.mapper.UserMapper.selectOne        : <==      Total: 1
+2022-05-10 22:12:19.912  INFO 19072 --- [http-nio-8080-exec-6] c.y.carlayui.service.UserServiceImpl     : userService中通过subject获取的principal=User(id=0, name=admin, username=admin, password=123, phone=15555021375, email=3258990296@qq.com, createTime=null, idCard=000000000000000000, avatar=/img/default-avatar.jpg, status=1, role=admin, sex=null, mod=0, isDeleted=0)
+2022-05-10 22:12:21.486 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.CarMapper.selectList        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 AND status = ? ORDER BY create_time DESC limit 6 
+2022-05-10 22:12:21.487 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.CarMapper.selectList        : ==> Parameters: 1(Integer)
+2022-05-10 22:12:21.492 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.CarMapper.selectList        : <==      Total: 6
+2022-05-10 22:12:24.421 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT COUNT(1) FROM car WHERE is_deleted = 0 
+2022-05-10 22:12:24.422 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: 
+2022-05-10 22:12:24.428 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.CarMapper.selectPage        : ==>  Preparing: SELECT id,create_time,user_id,car_id,type,car_describe,rent,deposit,status,thumbnail_url,slide_url,address,contact_name,contact_phone,is_deleted FROM car WHERE is_deleted=0 LIMIT ?,? 
+2022-05-10 22:12:24.428 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.CarMapper.selectPage        : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:12:24.437 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.CarMapper.selectPage        : <==      Total: 6
+2022-05-10 22:12:24.438 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.carlayui.controller.CarController    : carPage.getSize()6
+2022-05-10 22:12:24.438 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.carlayui.controller.CarController    : carPage.getPages()=3
+2022-05-10 22:12:24.438 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.carlayui.controller.CarController    : carPage.getTotal()17
+2022-05-10 22:12:24.438 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.carlayui.controller.CarController    : carPage.getCurrent()1
+2022-05-10 22:12:24.439 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.carlayui.controller.CarController    : carPage.getRecords()[Car(id=35, createTime=Fri Mar 25 22:15:12 CST 2022, userId=0, carId=001, type=轿车, carDescribe=大黄蜂, rent=66, deposit=66, status=1, thumbnailUrl=/upload/2022-03-25-22-14-47.jpeg, slideUrl=["/upload/2022-03-25-22-14-47.jpeg","/upload/2022-03-25-22-14-50.jpeg"], address=马鞍山, contactName=张三, contactPhone=16666666666, key=null, isDeleted=0, slideList=null), Car(id=36, createTime=Fri Mar 25 22:18:28 CST 2022, userId=0, carId=002, type=轿车, carDescribe=略, rent=88, deposit=88, status=0, thumbnailUrl=/upload/2022-03-25-22-17-50.jpeg, slideUrl=["/upload/2022-03-25-22-17-50.jpeg"], address=马鞍山, contactName=叶, contactPhone=15555021375, key=null, isDeleted=0, slideList=null), Car(id=37, createTime=Fri Mar 25 22:23:37 CST 2022, userId=0, carId=003, type=SUV, carDescribe=略, rent=66, deposit=66, status=1, thumbnailUrl=/upload/2022-03-25-22-23-03.jpeg, slideUrl=["/upload/2022-03-25-22-23-03.jpeg"], address=马鞍山, contactName=叶, contactPhone=15555021375, key=null, isDeleted=0, slideList=null), Car(id=38, createTime=Fri Mar 25 22:24:27 CST 2022, userId=0, carId=004, type=SUV, carDescribe=略, rent=88, deposit=88, status=-1, thumbnailUrl=/upload/2022-03-25-22-24-14.jpeg, slideUrl=["/upload/2022-03-25-22-24-14.jpeg"], address=马鞍山, contactName=叶, contactPhone=15555021375, key=null, isDeleted=0, slideList=null), Car(id=39, createTime=Mon Apr 25 15:01:50 CST 2022, userId=0, carId=005, type=SUV, carDescribe=阿尔法·罗密欧（Alfa Romeo）是意大利著名的轿车和跑车制造商，创建于1910年，总部设在米兰。公司原名ALFA（Anonima Lombarda Fabbrica Automobili，伦巴第汽车制造厂），其前身最早可追溯至1906年由Alexandre Darracq创立于那不勒斯后迁至米兰的一个汽车公司。, rent=88, deposit=88, status=0, thumbnailUrl=/upload/2022-04-22-15-00-13.jpg, slideUrl=["/upload/2022-04-22-15-00-13.jpg","/upload/2022-04-22-15-00-16.jpg","/upload/2022-04-22-15-00-20.jpg","/upload/2022-04-22-15-00-23.jpg","/upload/2022-04-22-15-00-26.jpg","/upload/2022-04-22-15-00-30.jpg"], address=马鞍山安徽工业大学, contactName=燚旻阿, contactPhone=15555021375, key=null, isDeleted=0, slideList=null), Car(id=40, createTime=Mon Apr 04 10:48:55 CST 2022, userId=0, carId=006, type=跑车, carDescribe=小蓝车，很蓝的啦，哈哈哈哈, rent=66, deposit=66, status=1, thumbnailUrl=/upload/2022-03-25-22-25-53.jpeg, slideUrl=["/upload/2022-03-25-22-25-53.jpeg"], address=滁州, contactName=叶, contactPhone=15555021375, key=null, isDeleted=0, slideList=null)]
+2022-05-10 22:12:25.691 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.totalNum        : ==>  Preparing: select car.type type,SUM(car_order.total) total from car_order,car where car_order.status=1 group by car.type 
+2022-05-10 22:12:25.691 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.totalNum        : ==> Parameters: 
+2022-05-10 22:12:25.694 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.totalNum        : <==      Total: 3
+2022-05-10 22:12:29.677 DEBUG 19072 --- [http-nio-8080-exec-7] c.y.c.mapper.NewsMapper.selectList       : ==>  Preparing: SELECT id,create_time,title,content,is_deleted FROM news WHERE is_deleted=0 
+2022-05-10 22:12:29.677 DEBUG 19072 --- [http-nio-8080-exec-7] c.y.c.mapper.NewsMapper.selectList       : ==> Parameters: 
+2022-05-10 22:12:29.680 DEBUG 19072 --- [http-nio-8080-exec-7] c.y.c.mapper.NewsMapper.selectList       : <==      Total: 5
+2022-05-10 22:12:32.270 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM ( SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE status IN () ) TOTAL 
+2022-05-10 22:12:32.270 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:12:32.317 ERROR 19072 --- [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM ( SELECT  id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date  FROM car_order 
+ 
+ WHERE status IN () ) TOTAL 
+
+### The error may exist in com/yimin/carlayui/mapper/OrderMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM ( SELECT  id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date  FROM car_order 
+ 
+ WHERE status IN () ) TOTAL 
+] with root cause
+
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) TOTAL' at line 3
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1009) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeQuery(DruidPooledPreparedStatement.java:228) ~[druid-1.1.10.jar:1.1.10]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:56) ~[mybatis-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy108.executeQuery(Unknown Source) ~[na:na]
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.queryTotal(PaginationInterceptor.java:224) ~[mybatis-plus-extension-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.intercept(PaginationInterceptor.java:193) ~[mybatis-plus-extension-3.1.2.jar:3.1.2]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy106.prepare(Unknown Source) ~[na:na]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:94) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:66) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.1.jar:3.5.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-2.0.1.jar:2.0.1]
+	at com.sun.proxy.$Proxy64.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-2.0.1.jar:2.0.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForIPage(MybatisMapperMethod.java:115) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:86) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at com.sun.proxy.$Proxy96.selectPage(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.16.jar:5.3.16]
+	at com.sun.proxy.$Proxy97.selectPage(Unknown Source) ~[na:na]
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.page(ServiceImpl.java:276) ~[mybatis-plus-extension-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>) ~[mybatis-plus-extension-3.1.2.jar:3.1.2]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.3.16.jar:5.3.16]
+	at com.yimin.carlayui.service.OrderServiceImpl$$EnhancerBySpringCGLIB$$50cd750.page(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:208) ~[spring-aop-5.3.16.jar:5.3.16]
+	at com.sun.proxy.$Proxy98.page(Unknown Source) ~[na:na]
+	at com.yimin.carlayui.controller.OrderController.carOrder(OrderController.java:286) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) ~[shiro-core-1.5.3.jar:1.5.3]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) ~[shiro-core-1.5.3.jar:1.5.3]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) ~[shiro-core-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2022-05-10 22:12:36.959 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM ( SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE status IN () ) TOTAL 
+2022-05-10 22:12:36.959 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:12:36.963 ERROR 19072 --- [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM ( SELECT  id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date  FROM car_order 
+ 
+ WHERE status IN () ) TOTAL 
+
+### The error may exist in com/yimin/carlayui/mapper/OrderMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM ( SELECT  id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date  FROM car_order 
+ 
+ WHERE status IN () ) TOTAL 
+] with root cause
+
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) TOTAL' at line 3
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1009) ~[mysql-connector-java-8.0.28.jar:8.0.28]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeQuery(DruidPooledPreparedStatement.java:228) ~[druid-1.1.10.jar:1.1.10]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:56) ~[mybatis-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy108.executeQuery(Unknown Source) ~[na:na]
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.queryTotal(PaginationInterceptor.java:224) ~[mybatis-plus-extension-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.intercept(PaginationInterceptor.java:193) ~[mybatis-plus-extension-3.1.2.jar:3.1.2]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy106.prepare(Unknown Source) ~[na:na]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:94) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:66) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.1.jar:3.5.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-2.0.1.jar:2.0.1]
+	at com.sun.proxy.$Proxy64.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-2.0.1.jar:2.0.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForIPage(MybatisMapperMethod.java:115) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:86) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62) ~[mybatis-plus-core-3.1.2.jar:3.1.2]
+	at com.sun.proxy.$Proxy96.selectPage(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.16.jar:5.3.16]
+	at com.sun.proxy.$Proxy97.selectPage(Unknown Source) ~[na:na]
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.page(ServiceImpl.java:276) ~[mybatis-plus-extension-3.1.2.jar:3.1.2]
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>) ~[mybatis-plus-extension-3.1.2.jar:3.1.2]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.3.16.jar:5.3.16]
+	at com.yimin.carlayui.service.OrderServiceImpl$$EnhancerBySpringCGLIB$$50cd750.page(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.16.jar:5.3.16]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:208) ~[spring-aop-5.3.16.jar:5.3.16]
+	at com.sun.proxy.$Proxy98.page(Unknown Source) ~[na:na]
+	at com.yimin.carlayui.controller.OrderController.carOrder(OrderController.java:286) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) ~[shiro-core-1.5.3.jar:1.5.3]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) ~[shiro-core-1.5.3.jar:1.5.3]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) ~[shiro-core-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.5.3.jar:1.5.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2022-05-10 22:14:04.904  INFO 19072 --- [Thread-13] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-05-10 22:14:05.170  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Starting CarLayuiApplication using Java 1.8.0_251 on LAPTOP-53OU72OO with PID 19072 (D:\projects\idea\car-layui\target\classes started by artisane in D:\projects\idea\car-layui)
+2022-05-10 22:14:05.170 DEBUG 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-10 22:14:05.170  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 22:14:05.491  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a781a8d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.491  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$aa14e77e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.491  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.yimin.carlayui.config.ShiroConfig$$EnhancerBySpringCGLIB$$e72017c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.507  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.507  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myBatisPlusConfig' of type [com.yimin.carlayui.config.MyBatisPlusConfig$$EnhancerBySpringCGLIB$$4ca53e82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.507  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.507  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$d23137c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.507  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.527  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.531  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.543  INFO 19072 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2022-05-10 22:14:05.548  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.548  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.564  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.564  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy115] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.564  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'realm' of type [com.yimin.carlayui.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.564  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.579  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.579  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:05.657  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-10 22:14:05.657  INFO 19072 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 22:14:05.657  INFO 19072 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 22:14:05.688  INFO 19072 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 22:14:05.688  INFO 19072 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 503 ms
+2022-05-10 22:14:06.048  INFO 19072 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-10 22:14:06.141  INFO 19072 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 22:14:06.173  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-10 22:14:06.173  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Started CarLayuiApplication in 1.036 seconds (JVM running for 131.85)
+2022-05-10 22:14:06.173  INFO 19072 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-10 22:14:07.963  INFO 19072 --- [Thread-19] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2022-05-10 22:14:08.186  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Starting CarLayuiApplication using Java 1.8.0_251 on LAPTOP-53OU72OO with PID 19072 (D:\projects\idea\car-layui\target\classes started by artisane in D:\projects\idea\car-layui)
+2022-05-10 22:14:08.186 DEBUG 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-10 22:14:08.186  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 22:14:08.364  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a781a8d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.370  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$aa14e77e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.371  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.yimin.carlayui.config.ShiroConfig$$EnhancerBySpringCGLIB$$e72017c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.380  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.381  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myBatisPlusConfig' of type [com.yimin.carlayui.config.MyBatisPlusConfig$$EnhancerBySpringCGLIB$$4ca53e82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.383  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.385  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$d23137c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.386  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.390  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.393  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.405  INFO 19072 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} inited
+2022-05-10 22:14:08.412  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.413  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.430  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.431  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy134] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.434  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'realm' of type [com.yimin.carlayui.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.437  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.441  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.442  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:14:08.496  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-10 22:14:08.496  INFO 19072 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 22:14:08.496  INFO 19072 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 22:14:08.512  INFO 19072 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 22:14:08.512  INFO 19072 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 324 ms
+2022-05-10 22:14:08.790  INFO 19072 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-10 22:14:08.884  INFO 19072 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 22:14:08.899  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-10 22:14:08.899  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Started CarLayuiApplication in 0.749 seconds (JVM running for 134.581)
+2022-05-10 22:14:08.899  INFO 19072 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-10 22:14:09.014  INFO 19072 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-10 22:14:09.016  INFO 19072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-10 22:14:09.019  INFO 19072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-05-10 22:14:09.304 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:14:09.304 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:14:09.307 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:14:09.307 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:14:09.315 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:14:14.617  INFO 19072 --- [http-nio-8080-exec-3] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the request target [/carOrderList?{%220%22:%22{%22,%221%22:%22\%22%22,%222%22:%22n%22,%223%22:%22o%22,%224%22:%22t%22,%225%22:%22_%22,%226%22:%22a%22,%227%22:%22g%22,%228%22:%22r%22,%229%22:%22e%22,%2210%22:%22e%22,%2211%22:%22m%22,%2212%22:%22e%22,%2213%22:%22n%22,%2214%22:%22t%22,%2215%22:%22\%22%22,%2216%22:%22:%22,%2217%22:%22\%22%22,%2218%22:%22o%22,%2219%22:%22n%22,%2220%22:%22\%22%22,%2221%22:%22,%22,%2222%22:%22\%22%22,%2223%22:%22n%22,%2224%22:%22o%22,%2225%22:%22t%22,%2226%22:%22_%22,%2227%22:%22p%22,%2228%22:%22a%22,%2229%22:%22y%22,%2230%22:%22\%22%22,%2231%22:%22:%22,%2232%22:%22\%22%22,%2233%22:%22o%22,%2234%22:%22n%22,%2235%22:%22\%22%22,%2236%22:%22,%22,%2237%22:%22\%22%22,%2238%22:%22n%22,%2239%22:%22o%22,%2240%22:%22r%22,%2241%22:%22m%22,%2242%22:%22a%22,%2243%22:%22l%22,%2244%22:%22\%22%22,%2245%22:%22:%22,%2246%22:%22\%22%22,%2247%22:%22o%22,%2248%22:%22n%22,%2249%22:%22\%22%22,%2250%22:%22,%22,%2251%22:%22\%22%22,%2252%22:%22f%22,%2253%22:%22i%22,%2254%22:%22n%22,%2255%22:%22i%22,%2256%22:%22s%22,%2257%22:%22h%22,%2258%22:%22\%22%22,%2259%22:%22:%22,%2260%22:%22\%22%22,%2261%22:%22o%22,%2262%22:%22n%22,%2263%22:%22\%22%22,%2264%22:%22,%22,%2265%22:%22\%22%22,%2266%22:%22e%22,%2267%22:%22n%22,%2268%22:%22d%22,%2269%22:%22_%22,%2270%22:%22r%22,%2271%22:%22e%22,%2272%22:%22n%22,%2273%22:%22t%22,%2274%22:%22_%22,%2275%22:%22a%22,%2276%22:%22p%22,%2277%22:%22p%22,%2278%22:%22l%22,%2279%22:%22y%22,%2280%22:%22\%22%22,%2281%22:%22:%22,%2282%22:%22\%22%22,%2283%22:%22o%22,%2284%22:%22n%22,%2285%22:%22\%22%22,%2286%22:%22,%22,%2287%22:%22\%22%22,%2288%22:%22e%22,%2289%22:%22n%22,%2290%22:%22d%22,%2291%22:%22_%22,%2292%22:%22r%22,%2293%22:%22e%22,%2294%22:%22n%22,%2295%22:%22t%22,%2296%22:%22_%22,%2297%22:%22n%22,%2298%22:%22o%22,%2299%22:%22t%22,%22100%22:%22_%22,%22101%22:%22a%22,%22102%22:%22l%22,%22103%22:%22l%22,%22104%22:%22o%22,%22105%22:%22w%22,%22106%22:%22\%22%22,%22107%22:%22:%22,%22108%22:%22\%22%22,%22109%22:%22o%22,%22110%22:%22n%22,%22111%22:%22\%22%22,%22112%22:%22}%22,%22page%22:1,%22limit%22:6} ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:494) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2022-05-10 22:15:13.002 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:15:13.002 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:15:13.004 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:15:13.004 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:15:13.008 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:15:15.772  INFO 19072 --- [http-nio-8080-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the request target [/carOrderList?{%220%22:%22{%22,%221%22:%22\%22%22,%222%22:%22c%22,%223%22:%22a%22,%224%22:%22n%22,%225%22:%22c%22,%226%22:%22e%22,%227%22:%22l%22,%228%22:%22e%22,%229%22:%22d%22,%2210%22:%22\%22%22,%2211%22:%22:%22,%2212%22:%22\%22%22,%2213%22:%22o%22,%2214%22:%22n%22,%2215%22:%22\%22%22,%2216%22:%22,%22,%2217%22:%22\%22%22,%2218%22:%22n%22,%2219%22:%22o%22,%2220%22:%22t%22,%2221%22:%22_%22,%2222%22:%22a%22,%2223%22:%22g%22,%2224%22:%22r%22,%2225%22:%22e%22,%2226%22:%22e%22,%2227%22:%22m%22,%2228%22:%22e%22,%2229%22:%22n%22,%2230%22:%22t%22,%2231%22:%22\%22%22,%2232%22:%22:%22,%2233%22:%22\%22%22,%2234%22:%22o%22,%2235%22:%22n%22,%2236%22:%22\%22%22,%2237%22:%22,%22,%2238%22:%22\%22%22,%2239%22:%22n%22,%2240%22:%22o%22,%2241%22:%22t%22,%2242%22:%22_%22,%2243%22:%22p%22,%2244%22:%22a%22,%2245%22:%22y%22,%2246%22:%22\%22%22,%2247%22:%22:%22,%2248%22:%22\%22%22,%2249%22:%22o%22,%2250%22:%22n%22,%2251%22:%22\%22%22,%2252%22:%22,%22,%2253%22:%22\%22%22,%2254%22:%22n%22,%2255%22:%22o%22,%2256%22:%22r%22,%2257%22:%22m%22,%2258%22:%22a%22,%2259%22:%22l%22,%2260%22:%22\%22%22,%2261%22:%22:%22,%2262%22:%22\%22%22,%2263%22:%22o%22,%2264%22:%22n%22,%2265%22:%22\%22%22,%2266%22:%22,%22,%2267%22:%22\%22%22,%2268%22:%22f%22,%2269%22:%22i%22,%2270%22:%22n%22,%2271%22:%22i%22,%2272%22:%22s%22,%2273%22:%22h%22,%2274%22:%22\%22%22,%2275%22:%22:%22,%2276%22:%22\%22%22,%2277%22:%22o%22,%2278%22:%22n%22,%2279%22:%22\%22%22,%2280%22:%22,%22,%2281%22:%22\%22%22,%2282%22:%22e%22,%2283%22:%22n%22,%2284%22:%22d%22,%2285%22:%22_%22,%2286%22:%22r%22,%2287%22:%22e%22,%2288%22:%22n%22,%2289%22:%22t%22,%2290%22:%22_%22,%2291%22:%22a%22,%2292%22:%22p%22,%2293%22:%22p%22,%2294%22:%22l%22,%2295%22:%22y%22,%2296%22:%22\%22%22,%2297%22:%22:%22,%2298%22:%22\%22%22,%2299%22:%22o%22,%22100%22:%22n%22,%22101%22:%22\%22%22,%22102%22:%22,%22,%22103%22:%22\%22%22,%22104%22:%22e%22,%22105%22:%22n%22,%22106%22:%22d%22,%22107%22:%22_%22,%22108%22:%22r%22,%22109%22:%22e%22,%22110%22:%22n%22,%22111%22:%22t%22,%22112%22:%22_%22,%22113%22:%22n%22,%22114%22:%22o%22,%22115%22:%22t%22,%22116%22:%22_%22,%22117%22:%22a%22,%22118%22:%22l%22,%22119%22:%22l%22,%22120%22:%22o%22,%22121%22:%22w%22,%22122%22:%22\%22%22,%22123%22:%22:%22,%22124%22:%22\%22%22,%22125%22:%22o%22,%22126%22:%22n%22,%22127%22:%22\%22%22,%22128%22:%22}%22,%22page%22:1,%22limit%22:6} ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:494) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2022-05-10 22:15:26.644  INFO 19072 --- [Thread-23] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} closed
+2022-05-10 22:15:26.925  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Starting CarLayuiApplication using Java 1.8.0_251 on LAPTOP-53OU72OO with PID 19072 (D:\projects\idea\car-layui\target\classes started by artisane in D:\projects\idea\car-layui)
+2022-05-10 22:15:26.925 DEBUG 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-10 22:15:26.925  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 22:15:27.300  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a781a8d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.300  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$aa14e77e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.300  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.yimin.carlayui.config.ShiroConfig$$EnhancerBySpringCGLIB$$e72017c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.331  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.331  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myBatisPlusConfig' of type [com.yimin.carlayui.config.MyBatisPlusConfig$$EnhancerBySpringCGLIB$$4ca53e82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.331  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.331  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$d23137c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.347  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.347  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.363  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.378  INFO 19072 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-4} inited
+2022-05-10 22:15:27.394  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.394  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.441  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.456  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy153] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.456  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'realm' of type [com.yimin.carlayui.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.456  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.472  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.472  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:27.628  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-10 22:15:27.628  INFO 19072 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 22:15:27.628  INFO 19072 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 22:15:27.675  INFO 19072 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 22:15:27.675  INFO 19072 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 750 ms
+2022-05-10 22:15:28.136  INFO 19072 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-10 22:15:28.229  INFO 19072 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 22:15:28.245  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-10 22:15:28.261  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Started CarLayuiApplication in 1.364 seconds (JVM running for 213.932)
+2022-05-10 22:15:28.261  INFO 19072 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-10 22:15:30.102  INFO 19072 --- [Thread-27] com.alibaba.druid.pool.DruidDataSource   : {dataSource-4} closed
+2022-05-10 22:15:30.306  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Starting CarLayuiApplication using Java 1.8.0_251 on LAPTOP-53OU72OO with PID 19072 (D:\projects\idea\car-layui\target\classes started by artisane in D:\projects\idea\car-layui)
+2022-05-10 22:15:30.306 DEBUG 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-10 22:15:30.306  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 22:15:30.482  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a781a8d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.482  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$aa14e77e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.498  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.yimin.carlayui.config.ShiroConfig$$EnhancerBySpringCGLIB$$e72017c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.498  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.498  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myBatisPlusConfig' of type [com.yimin.carlayui.config.MyBatisPlusConfig$$EnhancerBySpringCGLIB$$4ca53e82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.498  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.498  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$d23137c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.498  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.514  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.514  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.529  INFO 19072 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-5} inited
+2022-05-10 22:15:30.529  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.529  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.545  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.545  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy172] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.560  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'realm' of type [com.yimin.carlayui.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.560  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.560  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.560  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:15:30.628  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-10 22:15:30.628  INFO 19072 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 22:15:30.628  INFO 19072 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 22:15:30.647  INFO 19072 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 22:15:30.647  INFO 19072 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 341 ms
+2022-05-10 22:15:30.963  INFO 19072 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-10 22:15:31.067  INFO 19072 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 22:15:31.085  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-10 22:15:31.088  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Started CarLayuiApplication in 0.806 seconds (JVM running for 216.759)
+2022-05-10 22:15:31.091  INFO 19072 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-10 22:15:31.589  INFO 19072 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-10 22:15:31.590  INFO 19072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-10 22:15:31.591  INFO 19072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-10 22:15:31.806 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:15:31.807 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:15:31.810 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:15:31.810 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:15:31.815 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:15:33.130  INFO 19072 --- [http-nio-8080-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the request target [/carOrderList?{%220%22:%22{%22,%221%22:%22\%22%22,%222%22:%22c%22,%223%22:%22a%22,%224%22:%22n%22,%225%22:%22c%22,%226%22:%22e%22,%227%22:%22l%22,%228%22:%22e%22,%229%22:%22d%22,%2210%22:%22\%22%22,%2211%22:%22:%22,%2212%22:%22\%22%22,%2213%22:%22o%22,%2214%22:%22n%22,%2215%22:%22\%22%22,%2216%22:%22,%22,%2217%22:%22\%22%22,%2218%22:%22n%22,%2219%22:%22o%22,%2220%22:%22t%22,%2221%22:%22_%22,%2222%22:%22a%22,%2223%22:%22g%22,%2224%22:%22r%22,%2225%22:%22e%22,%2226%22:%22e%22,%2227%22:%22m%22,%2228%22:%22e%22,%2229%22:%22n%22,%2230%22:%22t%22,%2231%22:%22\%22%22,%2232%22:%22:%22,%2233%22:%22\%22%22,%2234%22:%22o%22,%2235%22:%22n%22,%2236%22:%22\%22%22,%2237%22:%22,%22,%2238%22:%22\%22%22,%2239%22:%22n%22,%2240%22:%22o%22,%2241%22:%22t%22,%2242%22:%22_%22,%2243%22:%22p%22,%2244%22:%22a%22,%2245%22:%22y%22,%2246%22:%22\%22%22,%2247%22:%22:%22,%2248%22:%22\%22%22,%2249%22:%22o%22,%2250%22:%22n%22,%2251%22:%22\%22%22,%2252%22:%22,%22,%2253%22:%22\%22%22,%2254%22:%22n%22,%2255%22:%22o%22,%2256%22:%22r%22,%2257%22:%22m%22,%2258%22:%22a%22,%2259%22:%22l%22,%2260%22:%22\%22%22,%2261%22:%22:%22,%2262%22:%22\%22%22,%2263%22:%22o%22,%2264%22:%22n%22,%2265%22:%22\%22%22,%2266%22:%22,%22,%2267%22:%22\%22%22,%2268%22:%22f%22,%2269%22:%22i%22,%2270%22:%22n%22,%2271%22:%22i%22,%2272%22:%22s%22,%2273%22:%22h%22,%2274%22:%22\%22%22,%2275%22:%22:%22,%2276%22:%22\%22%22,%2277%22:%22o%22,%2278%22:%22n%22,%2279%22:%22\%22%22,%2280%22:%22,%22,%2281%22:%22\%22%22,%2282%22:%22e%22,%2283%22:%22n%22,%2284%22:%22d%22,%2285%22:%22_%22,%2286%22:%22r%22,%2287%22:%22e%22,%2288%22:%22n%22,%2289%22:%22t%22,%2290%22:%22_%22,%2291%22:%22a%22,%2292%22:%22p%22,%2293%22:%22p%22,%2294%22:%22l%22,%2295%22:%22y%22,%2296%22:%22\%22%22,%2297%22:%22:%22,%2298%22:%22\%22%22,%2299%22:%22o%22,%22100%22:%22n%22,%22101%22:%22\%22%22,%22102%22:%22,%22,%22103%22:%22\%22%22,%22104%22:%22e%22,%22105%22:%22n%22,%22106%22:%22d%22,%22107%22:%22_%22,%22108%22:%22r%22,%22109%22:%22e%22,%22110%22:%22n%22,%22111%22:%22t%22,%22112%22:%22_%22,%22113%22:%22n%22,%22114%22:%22o%22,%22115%22:%22t%22,%22116%22:%22_%22,%22117%22:%22a%22,%22118%22:%22l%22,%22119%22:%22l%22,%22120%22:%22o%22,%22121%22:%22w%22,%22122%22:%22\%22%22,%22123%22:%22:%22,%22124%22:%22\%22%22,%22125%22:%22o%22,%22126%22:%22n%22,%22127%22:%22\%22%22,%22128%22:%22}%22,%22page%22:1,%22limit%22:6} ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:494) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2022-05-10 22:15:40.618  INFO 19072 --- [http-nio-8080-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the request target [/carOrderList?{%220%22:%22{%22,%221%22:%22\%22%22,%222%22:%22c%22,%223%22:%22a%22,%224%22:%22n%22,%225%22:%22c%22,%226%22:%22e%22,%227%22:%22l%22,%228%22:%22e%22,%229%22:%22d%22,%2210%22:%22\%22%22,%2211%22:%22:%22,%2212%22:%22\%22%22,%2213%22:%22o%22,%2214%22:%22n%22,%2215%22:%22\%22%22,%2216%22:%22,%22,%2217%22:%22\%22%22,%2218%22:%22n%22,%2219%22:%22o%22,%2220%22:%22t%22,%2221%22:%22_%22,%2222%22:%22a%22,%2223%22:%22g%22,%2224%22:%22r%22,%2225%22:%22e%22,%2226%22:%22e%22,%2227%22:%22m%22,%2228%22:%22e%22,%2229%22:%22n%22,%2230%22:%22t%22,%2231%22:%22\%22%22,%2232%22:%22:%22,%2233%22:%22\%22%22,%2234%22:%22o%22,%2235%22:%22n%22,%2236%22:%22\%22%22,%2237%22:%22,%22,%2238%22:%22\%22%22,%2239%22:%22n%22,%2240%22:%22o%22,%2241%22:%22t%22,%2242%22:%22_%22,%2243%22:%22p%22,%2244%22:%22a%22,%2245%22:%22y%22,%2246%22:%22\%22%22,%2247%22:%22:%22,%2248%22:%22\%22%22,%2249%22:%22o%22,%2250%22:%22n%22,%2251%22:%22\%22%22,%2252%22:%22,%22,%2253%22:%22\%22%22,%2254%22:%22n%22,%2255%22:%22o%22,%2256%22:%22r%22,%2257%22:%22m%22,%2258%22:%22a%22,%2259%22:%22l%22,%2260%22:%22\%22%22,%2261%22:%22:%22,%2262%22:%22\%22%22,%2263%22:%22o%22,%2264%22:%22n%22,%2265%22:%22\%22%22,%2266%22:%22,%22,%2267%22:%22\%22%22,%2268%22:%22f%22,%2269%22:%22i%22,%2270%22:%22n%22,%2271%22:%22i%22,%2272%22:%22s%22,%2273%22:%22h%22,%2274%22:%22\%22%22,%2275%22:%22:%22,%2276%22:%22\%22%22,%2277%22:%22o%22,%2278%22:%22n%22,%2279%22:%22\%22%22,%2280%22:%22,%22,%2281%22:%22\%22%22,%2282%22:%22e%22,%2283%22:%22n%22,%2284%22:%22d%22,%2285%22:%22_%22,%2286%22:%22r%22,%2287%22:%22e%22,%2288%22:%22n%22,%2289%22:%22t%22,%2290%22:%22_%22,%2291%22:%22a%22,%2292%22:%22p%22,%2293%22:%22p%22,%2294%22:%22l%22,%2295%22:%22y%22,%2296%22:%22\%22%22,%2297%22:%22:%22,%2298%22:%22\%22%22,%2299%22:%22o%22,%22100%22:%22n%22,%22101%22:%22\%22%22,%22102%22:%22,%22,%22103%22:%22\%22%22,%22104%22:%22e%22,%22105%22:%22n%22,%22106%22:%22d%22,%22107%22:%22_%22,%22108%22:%22r%22,%22109%22:%22e%22,%22110%22:%22n%22,%22111%22:%22t%22,%22112%22:%22_%22,%22113%22:%22n%22,%22114%22:%22o%22,%22115%22:%22t%22,%22116%22:%22_%22,%22117%22:%22a%22,%22118%22:%22l%22,%22119%22:%22l%22,%22120%22:%22o%22,%22121%22:%22w%22,%22122%22:%22\%22%22,%22123%22:%22:%22,%22124%22:%22\%22%22,%22125%22:%22o%22,%22126%22:%22n%22,%22127%22:%22\%22%22,%22128%22:%22}%22,%22page%22:1,%22limit%22:6} ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:494) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2022-05-10 22:18:41.870  INFO 19072 --- [Thread-31] com.alibaba.druid.pool.DruidDataSource   : {dataSource-5} closed
+2022-05-10 22:18:42.073  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Starting CarLayuiApplication using Java 1.8.0_251 on LAPTOP-53OU72OO with PID 19072 (D:\projects\idea\car-layui\target\classes started by artisane in D:\projects\idea\car-layui)
+2022-05-10 22:18:42.073 DEBUG 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-10 22:18:42.073  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 22:18:42.268  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a781a8d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.283  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$aa14e77e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.283  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.yimin.carlayui.config.ShiroConfig$$EnhancerBySpringCGLIB$$e72017c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.283  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.283  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myBatisPlusConfig' of type [com.yimin.carlayui.config.MyBatisPlusConfig$$EnhancerBySpringCGLIB$$4ca53e82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.299  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.299  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$d23137c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.299  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.299  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.299  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.314  INFO 19072 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-6} inited
+2022-05-10 22:18:42.314  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.330  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.346  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.346  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy191] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.346  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'realm' of type [com.yimin.carlayui.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.346  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.346  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.346  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:42.424  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-10 22:18:42.424  INFO 19072 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 22:18:42.424  INFO 19072 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 22:18:42.439  INFO 19072 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 22:18:42.439  INFO 19072 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 366 ms
+2022-05-10 22:18:42.768  INFO 19072 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-10 22:18:42.861  INFO 19072 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 22:18:42.892  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-10 22:18:42.892  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Started CarLayuiApplication in 0.842 seconds (JVM running for 408.572)
+2022-05-10 22:18:42.892  INFO 19072 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-10 22:18:44.674  INFO 19072 --- [Thread-35] com.alibaba.druid.pool.DruidDataSource   : {dataSource-6} closed
+2022-05-10 22:18:44.904  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Starting CarLayuiApplication using Java 1.8.0_251 on LAPTOP-53OU72OO with PID 19072 (D:\projects\idea\car-layui\target\classes started by artisane in D:\projects\idea\car-layui)
+2022-05-10 22:18:44.904 DEBUG 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-10 22:18:44.904  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 22:18:45.063  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a781a8d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.063  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$EnhancerBySpringCGLIB$$aa14e77e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.063  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.yimin.carlayui.config.ShiroConfig$$EnhancerBySpringCGLIB$$e72017c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.063  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.079  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'myBatisPlusConfig' of type [com.yimin.carlayui.config.MyBatisPlusConfig$$EnhancerBySpringCGLIB$$4ca53e82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.079  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.079  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$d23137c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.079  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.079  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.079  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.095  INFO 19072 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-7} inited
+2022-05-10 22:18:45.095  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.095  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.110  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.110  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy210] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.110  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'realm' of type [com.yimin.carlayui.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.110  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'defaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.110  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.110  INFO 19072 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-10 22:18:45.193  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-10 22:18:45.194  INFO 19072 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 22:18:45.194  INFO 19072 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 22:18:45.207  INFO 19072 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 22:18:45.207  INFO 19072 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 301 ms
+2022-05-10 22:18:45.503  INFO 19072 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-10 22:18:45.584  INFO 19072 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 22:18:45.601  INFO 19072 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-10 22:18:45.605  INFO 19072 --- [restartedMain] com.yimin.carlayui.CarLayuiApplication   : Started CarLayuiApplication in 0.721 seconds (JVM running for 411.276)
+2022-05-10 22:18:45.606  INFO 19072 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-10 22:18:50.158  INFO 19072 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-10 22:18:50.159  INFO 19072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-10 22:18:50.161  INFO 19072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-05-10 22:18:50.400 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:18:50.401 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:18:50.404 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:18:50.405 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:18:50.408 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:19:02.238  INFO 19072 --- [http-nio-8080-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the request target [/carOrderList?{%220%22:%22{%22,%221%22:%22\%22%22,%222%22:%22c%22,%223%22:%22a%22,%224%22:%22n%22,%225%22:%22c%22,%226%22:%22e%22,%227%22:%22l%22,%228%22:%22e%22,%229%22:%22d%22,%2210%22:%22\%22%22,%2211%22:%22:%22,%2212%22:%22\%22%22,%2213%22:%22o%22,%2214%22:%22n%22,%2215%22:%22\%22%22,%2216%22:%22,%22,%2217%22:%22\%22%22,%2218%22:%22n%22,%2219%22:%22o%22,%2220%22:%22t%22,%2221%22:%22_%22,%2222%22:%22a%22,%2223%22:%22g%22,%2224%22:%22r%22,%2225%22:%22e%22,%2226%22:%22e%22,%2227%22:%22m%22,%2228%22:%22e%22,%2229%22:%22n%22,%2230%22:%22t%22,%2231%22:%22\%22%22,%2232%22:%22:%22,%2233%22:%22\%22%22,%2234%22:%22o%22,%2235%22:%22n%22,%2236%22:%22\%22%22,%2237%22:%22,%22,%2238%22:%22\%22%22,%2239%22:%22n%22,%2240%22:%22o%22,%2241%22:%22t%22,%2242%22:%22_%22,%2243%22:%22p%22,%2244%22:%22a%22,%2245%22:%22y%22,%2246%22:%22\%22%22,%2247%22:%22:%22,%2248%22:%22\%22%22,%2249%22:%22o%22,%2250%22:%22n%22,%2251%22:%22\%22%22,%2252%22:%22,%22,%2253%22:%22\%22%22,%2254%22:%22n%22,%2255%22:%22o%22,%2256%22:%22r%22,%2257%22:%22m%22,%2258%22:%22a%22,%2259%22:%22l%22,%2260%22:%22\%22%22,%2261%22:%22:%22,%2262%22:%22\%22%22,%2263%22:%22o%22,%2264%22:%22n%22,%2265%22:%22\%22%22,%2266%22:%22,%22,%2267%22:%22\%22%22,%2268%22:%22f%22,%2269%22:%22i%22,%2270%22:%22n%22,%2271%22:%22i%22,%2272%22:%22s%22,%2273%22:%22h%22,%2274%22:%22\%22%22,%2275%22:%22:%22,%2276%22:%22\%22%22,%2277%22:%22o%22,%2278%22:%22n%22,%2279%22:%22\%22%22,%2280%22:%22,%22,%2281%22:%22\%22%22,%2282%22:%22e%22,%2283%22:%22n%22,%2284%22:%22d%22,%2285%22:%22_%22,%2286%22:%22r%22,%2287%22:%22e%22,%2288%22:%22n%22,%2289%22:%22t%22,%2290%22:%22_%22,%2291%22:%22a%22,%2292%22:%22p%22,%2293%22:%22p%22,%2294%22:%22l%22,%2295%22:%22y%22,%2296%22:%22\%22%22,%2297%22:%22:%22,%2298%22:%22\%22%22,%2299%22:%22o%22,%22100%22:%22n%22,%22101%22:%22\%22%22,%22102%22:%22,%22,%22103%22:%22\%22%22,%22104%22:%22e%22,%22105%22:%22n%22,%22106%22:%22d%22,%22107%22:%22_%22,%22108%22:%22r%22,%22109%22:%22e%22,%22110%22:%22n%22,%22111%22:%22t%22,%22112%22:%22_%22,%22113%22:%22n%22,%22114%22:%22o%22,%22115%22:%22t%22,%22116%22:%22_%22,%22117%22:%22a%22,%22118%22:%22l%22,%22119%22:%22l%22,%22120%22:%22o%22,%22121%22:%22w%22,%22122%22:%22\%22%22,%22123%22:%22:%22,%22124%22:%22\%22%22,%22125%22:%22o%22,%22126%22:%22n%22,%22127%22:%22\%22%22,%22128%22:%22}%22,%22page%22:1,%22limit%22:6} ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:494) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2022-05-10 22:20:04.305 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:20:04.306 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:20:04.309 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:20:04.309 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:20:04.312 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:20:14.459 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:20:14.459 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:20:14.461 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:20:14.461 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:20:14.469 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:21:08.157 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:21:08.157 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:21:08.159 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:21:08.160 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:21:08.164 DEBUG 19072 --- [http-nio-8080-exec-4] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:21:23.950 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.carlayui.controller.OrderController  : canceled=on
+2022-05-10 22:21:23.951 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.carlayui.controller.OrderController  : not_agreement=on
+2022-05-10 22:21:23.951 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.carlayui.controller.OrderController  : not_pay=on
+2022-05-10 22:21:23.951 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.carlayui.controller.OrderController  : normal=on
+2022-05-10 22:21:23.951 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.carlayui.controller.OrderController  : finish=on
+2022-05-10 22:21:23.951 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.carlayui.controller.OrderController  : end_rent_apply=on
+2022-05-10 22:21:23.951 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.carlayui.controller.OrderController  : end_rent_not_allow=on
+2022-05-10 22:21:23.956 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE status IN (?, ?, ?, ?, ?, ?, ?) 
+2022-05-10 22:21:23.957 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: -3(Integer), -2(Integer), -1(Integer), 0(Integer), 1(Integer), 2(Integer), 3(Integer)
+2022-05-10 22:21:23.961 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE status IN (?,?,?,?,?,?,?) LIMIT ?,? 
+2022-05-10 22:21:23.961 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: -3(Integer), -2(Integer), -1(Integer), 0(Integer), 1(Integer), 2(Integer), 3(Integer), 0(Long), 6(Long)
+2022-05-10 22:21:23.965 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:21:39.540 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.carlayui.controller.OrderController  : not_agreement=on
+2022-05-10 22:21:39.540 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.carlayui.controller.OrderController  : not_pay=on
+2022-05-10 22:21:39.540 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.carlayui.controller.OrderController  : normal=on
+2022-05-10 22:21:39.540 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.carlayui.controller.OrderController  : finish=on
+2022-05-10 22:21:39.541 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.carlayui.controller.OrderController  : end_rent_apply=on
+2022-05-10 22:21:39.541 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.carlayui.controller.OrderController  : end_rent_not_allow=on
+2022-05-10 22:21:39.547 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE status IN (?, ?, ?, ?, ?, ?) 
+2022-05-10 22:21:39.547 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: -2(Integer), -1(Integer), 0(Integer), 1(Integer), 2(Integer), 3(Integer)
+2022-05-10 22:21:39.549 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE status IN (?,?,?,?,?,?) LIMIT ?,? 
+2022-05-10 22:21:39.550 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: -2(Integer), -1(Integer), 0(Integer), 1(Integer), 2(Integer), 3(Integer), 0(Long), 6(Long)
+2022-05-10 22:21:39.552 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:21:44.372 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : not_pay=on
+2022-05-10 22:21:44.373 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : normal=on
+2022-05-10 22:21:44.373 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : finish=on
+2022-05-10 22:21:44.373 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : end_rent_apply=on
+2022-05-10 22:21:44.373 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : end_rent_not_allow=on
+2022-05-10 22:21:44.378 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE status IN (?, ?, ?, ?, ?) 
+2022-05-10 22:21:44.378 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: -1(Integer), 0(Integer), 1(Integer), 2(Integer), 3(Integer)
+2022-05-10 22:21:44.380 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE status IN (?,?,?,?,?) LIMIT ?,? 
+2022-05-10 22:21:44.381 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: -1(Integer), 0(Integer), 1(Integer), 2(Integer), 3(Integer), 0(Long), 6(Long)
+2022-05-10 22:21:44.385 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:21:46.654 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.carlayui.controller.OrderController  : normal=on
+2022-05-10 22:21:46.655 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.carlayui.controller.OrderController  : finish=on
+2022-05-10 22:21:46.655 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.carlayui.controller.OrderController  : end_rent_apply=on
+2022-05-10 22:21:46.655 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.carlayui.controller.OrderController  : end_rent_not_allow=on
+2022-05-10 22:21:46.660 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE status IN (?, ?, ?, ?) 
+2022-05-10 22:21:46.660 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Integer), 1(Integer), 2(Integer), 3(Integer)
+2022-05-10 22:21:46.662 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE status IN (?,?,?,?) LIMIT ?,? 
+2022-05-10 22:21:46.663 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Integer), 1(Integer), 2(Integer), 3(Integer), 0(Long), 6(Long)
+2022-05-10 22:21:46.665 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 5
+2022-05-10 22:21:49.847 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.carlayui.controller.OrderController  : finish=on
+2022-05-10 22:21:49.847 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.carlayui.controller.OrderController  : end_rent_not_allow=on
+2022-05-10 22:21:49.850 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE status IN (?, ?) 
+2022-05-10 22:21:49.851 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Integer), 3(Integer)
+2022-05-10 22:21:49.853 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE status IN (?,?) LIMIT ?,? 
+2022-05-10 22:21:49.854 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 1(Integer), 3(Integer), 0(Long), 6(Long)
+2022-05-10 22:21:49.856 DEBUG 19072 --- [http-nio-8080-exec-2] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 3
+2022-05-10 22:21:53.511 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:21:53.512 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:21:53.514 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:21:53.514 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:21:53.516 DEBUG 19072 --- [http-nio-8080-exec-3] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:22:01.926 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:22:01.926 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:22:01.928 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:22:01.928 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:22:01.930 DEBUG 19072 --- [http-nio-8080-exec-5] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:22:10.508 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.carlayui.controller.OrderController  : normal=on
+2022-05-10 22:22:10.511 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE status IN (?) 
+2022-05-10 22:22:10.512 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Integer)
+2022-05-10 22:22:10.514 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE status IN (?) LIMIT ?,? 
+2022-05-10 22:22:10.515 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Integer), 0(Long), 6(Long)
+2022-05-10 22:22:10.519 DEBUG 19072 --- [http-nio-8080-exec-9] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 2
+2022-05-10 22:26:23.282 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:26:23.283 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:26:23.285 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:26:23.285 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:26:23.288 DEBUG 19072 --- [http-nio-8080-exec-1] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:26:37.968 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order 
+2022-05-10 22:26:37.968 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 
+2022-05-10 22:26:37.969 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order LIMIT ?,? 
+2022-05-10 22:26:37.970 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: 0(Long), 6(Long)
+2022-05-10 22:26:37.971 DEBUG 19072 --- [http-nio-8080-exec-8] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6
+2022-05-10 22:26:46.344 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : canceled=on
+2022-05-10 22:26:46.344 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : not_agreement=on
+2022-05-10 22:26:46.344 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : not_pay=on
+2022-05-10 22:26:46.344 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : normal=on
+2022-05-10 22:26:46.344 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : finish=on
+2022-05-10 22:26:46.344 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : end_rent_apply=on
+2022-05-10 22:26:46.344 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.carlayui.controller.OrderController  : end_rent_not_allow=on
+2022-05-10 22:26:46.347 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM car_order WHERE status IN (?, ?, ?, ?, ?, ?, ?) 
+2022-05-10 22:26:46.348 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: -3(Integer), -2(Integer), -1(Integer), 0(Integer), 1(Integer), 2(Integer), 3(Integer)
+2022-05-10 22:26:46.350 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==>  Preparing: SELECT id,create_time,customer_id,owner_id,car_id,status,rent,deposit,days,total,start_date,end_date FROM car_order WHERE status IN (?,?,?,?,?,?,?) LIMIT ?,? 
+2022-05-10 22:26:46.350 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : ==> Parameters: -3(Integer), -2(Integer), -1(Integer), 0(Integer), 1(Integer), 2(Integer), 3(Integer), 0(Long), 6(Long)
+2022-05-10 22:26:46.352 DEBUG 19072 --- [http-nio-8080-exec-10] c.y.c.mapper.OrderMapper.selectPage      : <==      Total: 6

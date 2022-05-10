@@ -12,10 +12,63 @@
     <div class="layui-row layui-col-space20">
         <div class="layui-col-md3" style="padding-left: 50px">
             <div th:replace="common::leftmenu"></div>
+            <br>
+            <div class="layui-panel" style="padding: 10px;">
+                <form class="layui-form">
+                    <label style="font-size: 10px; color: #009688" title="至少选中一项时才会生效">
+                        过滤
+                        <i class="layui-icon layui-icon-about"></i>
+                    </label>
+                    <div class="layui-inline" style="margin-bottom: 6px">
+                        <input type="checkbox" name="canceled" title="已取消" checked>
+                        <input type="checkbox" name="not_agreement" title="待签合同" checked>
+
+                    </div>
+                    <div class="layui-inline" style="margin-bottom: 6px">
+                        <input type="checkbox" name="not_pay" title="待付款" checked>
+                        <input type="checkbox" name="normal" title="生效中" checked>
+                    </div>
+                    <div class="layui-inline" style="margin-bottom: 6px">
+                        <input type="checkbox" name="finish" title="已到期" checked>
+                        <input type="checkbox" name="end_rent_apply" title="退租中" checked>
+                    </div>
+                    <div class="layui-inline" style="margin-bottom: 6px">
+                        <input type="checkbox" name="end_rent_not_allow" title="退租不通过" checked>
+                    </div>
+                    <!--<div class="layui-inline">-->
+                    <!--    <div class="layui-input-inline">-->
+                    <!--        <input type="checkbox" name="normal" title="生效中" checked>-->
+                    <!--        <input type="checkbox" name="finish" title="已到期" checked>-->
+                    <!--        <input type="checkbox" name="end_rent_apply" title="退租中" checked>-->
+                    <!--        <input type="checkbox" name="end_rent_not_allow" title="退租不通过" checked>-->
+                    <!--    </div>-->
+                    <!--</div>-->
+                    <div class="layui-input-block" style="margin-left: 0">
+                        <button class="layui-btn" lay-submit lay-filter="submitStatus" style="width: 100%;">过滤</button>
+                    </div>
+                </form>
+
+            </div>
         </div>
         <div class="layui-col-md9" style="background-color:whitesmoke;padding-top: 10px">
             <div class="layui-row" style="text-align: center">
                 <div class="layui-panel" style="padding: 10px">
+                    <!--<form class="layui-form" action="">-->
+                    <!--    <div class="layui-inline">-->
+                    <!--        <div class="layui-input-inline">-->
+                    <!--            <input type="checkbox" name="canceled" title="已取消" checked>-->
+                    <!--            <input type="checkbox" name="not_agreement" title="待签合同" checked>-->
+                    <!--            <input type="checkbox" name="not_pay" title="待付款" checked>-->
+                    <!--            <input type="checkbox" name="normal" title="生效中" checked>-->
+                    <!--            <input type="checkbox" name="finish" title="已到期" checked>-->
+                    <!--            <input type="checkbox" name="end_rent_apply" title="退租中" checked>-->
+                    <!--            <input type="checkbox" name="end_rent_not_allow" title="退租不通过" checked>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--    <div class="layui-inline">-->
+                    <!--        <button class="layui-btn" lay-submit lay-filter="submitStatus">立即提交</button>-->
+                    <!--    </div>-->
+                    <!--</form>-->
                     <table id="orderTable" lay-filter="orderTable"></table>
                 </div>
 
@@ -38,11 +91,28 @@
 </div>
 <script th:inline="javascript">
     //注意：导航 依赖 element 模块，否则无法进行功能性操作
-    layui.use(['table', 'util', 'layer', 'dropdown'], function () {
+    layui.use(['table', 'util', 'layer', 'dropdown', 'form', 'jquery'], function () {
         var table = layui.table;
         var layer = layui.layer;
         var util = layui.util;
         var dropdown = layui.dropdown;
+        var form = layui.form;
+        var jquery = layui.jquery;
+
+        //监听提交
+        form.on('submit(submitStatus)', function (data) {
+            // 复选框选中时，值为"on"
+            // layer.msg(JSON.stringify(data.field));
+            table.reload('orderTable', {
+                // 这里不能用json格式
+                // contentType: 'application/json',
+                where: data.field,
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+            }); //只重载数据
+            return false;
+        });
 
 
         //第一个实例
@@ -212,7 +282,7 @@
                                     endOrder(obj.data.id, table)
                                     layer.close(index);
                                 });
-                            }else if(data.id === 'cancelwithdraw'){
+                            } else if (data.id === 'cancelwithdraw') {
                                 layer.confirm('取消退租?', {icon: 3, title: '提示'}, function (index) {
                                     //do something
                                     cancelEndOrder(obj.data.id, table)
