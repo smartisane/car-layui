@@ -61,6 +61,13 @@ public class OrderController {
     //     }
     //
     // }
+
+    /**
+     * 车辆预定
+     * @param map
+     * @param session
+     * @return
+     */
     @PostMapping(value = "/submitOrder", produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Result submitOrder(@RequestBody Map<String, String> map, HttpSession session) {

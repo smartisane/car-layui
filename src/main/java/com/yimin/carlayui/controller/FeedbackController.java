@@ -105,11 +105,14 @@ public class FeedbackController extends ApiController {
         if(user==null ){
             return "error/404";
         }else if("admin".equals(user.getRole())){
-            List<Feedback> feedbackList = feedbackService.list();
+            QueryWrapper<Feedback> wrapper = new QueryWrapper<>();
+            wrapper.orderByDesc("create_time");
+            List<Feedback> feedbackList = feedbackService.list(wrapper);
             model.addAttribute("feedbackList",feedbackList);
         }else if("customer".equals(user.getRole())){
             QueryWrapper<Feedback> wrapper = new QueryWrapper<>();
             wrapper.eq("user_id",user.getId());
+            wrapper.orderByDesc("create_time");
             List<Feedback> feedbackList = feedbackService.list(wrapper);
             model.addAttribute("feedbackList",feedbackList);
         }

@@ -39,11 +39,11 @@
     // 指定图表的配置项和数据
     var option = {
         title: {
-            text: '各车型销售额'
+            text: '各车型租赁成交额'
         },
         tooltip: {},
         legend: {
-            data: ['销售额']
+            data: ['成交额']
         },
         xAxis: {
             // data: ['轿车', '跑车', 'SUV']
@@ -52,7 +52,7 @@
         yAxis: {},
         series: [
             {
-                name: '销量',
+                name: '成交额',
                 type: 'bar',
                 data: [statisticsList[0].total, statisticsList[1].total, statisticsList[2].total]
             }

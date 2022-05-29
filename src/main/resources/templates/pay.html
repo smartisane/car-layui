@@ -34,7 +34,9 @@
                 <img th:src="@{/img/pay.png}" src="" style="width: 300px;height: 300px;">
             </div>
             <div style="text-align: center;margin-bottom: 20px">
-                <button type="button" class="layui-btn" th:onclick="'submitPay('+${order.id}+')'">模拟支付成功</button>
+                <button th:unless="${car.status}==0" type="button" class="layui-btn" th:onclick="'submitPay('+${order.id}+')'">模拟支付成功</button>
+                <!--已出租-->
+                <button th:if="${car.status}==0" type="button" class="layui-btn">该车已出租，请取消订单</button>
             </div>
         </div>
     </div>

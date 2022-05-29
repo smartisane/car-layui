@@ -157,7 +157,7 @@ public class CarController {
             carService.updateById(car);
             return Result.success("下架成功");
         }
-        return Result.error("该车已出租,暂时无法下架");
+        return Result.error("该车已出租或已下架,无法执行下架操作");
     }
 
     /**
